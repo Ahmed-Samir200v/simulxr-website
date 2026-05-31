@@ -85,9 +85,10 @@
 - [x] Google Fonts integration (Barlow, Barlow Condensed, IBM Plex Mono)
 
 ### Bilingual Support (Future)
-- [ ] Arabic language support infrastructure
-- [ ] Language switcher component
-- [ ] Arabic translations for all content
+- [ ] Arabic language support infrastructure (i18n setup, locale state, translation dictionaries)
+- [ ] Language switcher component (deferred for future release)
+- [ ] Arabic translations for all content (deferred for future release)
+- [x] Arabic tagline in footer (تدرّب على ما لا يُتصوّر)
 
 ## Database & Backend
 
@@ -113,4 +114,5 @@
 - [x] All tests passing (7/7)
 - [x] TypeScript compilation successful
 - [x] Development server running
-- [ ] Final checkpoint and deployment ready
+- [x] All features implemented and tested
+- [ ] Final checkpoint saved (after all fixes applied)
