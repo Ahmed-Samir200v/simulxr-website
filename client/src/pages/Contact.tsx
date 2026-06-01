@@ -37,15 +37,17 @@ export default function Contact() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-[#0A1628] bg-grid-pattern animate-grid-drift glow-orange-bl overflow-hidden">
+      <section className="relative pt-40 pb-24 bg-[#0B1120] overflow-hidden">
         <div className="container relative z-10">
-          <span className="section-tag mb-6 inline-block">
-            {t("Get Started", "ابدأ الآن")}
+          <span className="section-eyebrow mb-4 block animate-fadeUp">
+            {t("GET STARTED", "ابدأ الآن")}
           </span>
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-white mt-4 mb-6 animate-fadeUp">
-            {t("Let's Talk.", "لنتحدث.")}
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl text-white leading-tight animate-fadeUp-delay-1">
+            {t("Let's Build Your", "لنبني محاكاة")}
+            <br />
+            {t("Training Simulation", "التدريب الخاصة بك")}<span className="text-gold">.</span>
           </h1>
-          <p className="text-white/50 max-w-2xl text-lg leading-relaxed animate-fadeUp-delay-1">
+          <p className="text-white/50 max-w-xl mt-6 text-lg leading-relaxed animate-fadeUp-delay-2">
             {t(
               "Request a pilot package, schedule a demo, or just tell us about your facility. Our team responds within 24 hours.",
               "اطلب باقة تجريبية أو حدد موعداً لعرض توضيحي أو أخبرنا عن منشأتك. فريقنا يرد خلال 24 ساعة."
@@ -55,16 +57,16 @@ export default function Contact() {
       </section>
 
       {/* Contact Form + Info */}
-      <section className="py-20 bg-[#0A1628]">
+      <section className="py-24 bg-white">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Form */}
             <div className="lg:col-span-3">
-              <div className="card-navy rounded-sm p-8 md:p-10">
-                <h2 className="font-display text-2xl font-bold text-white mb-2">
+              <div className="card-light rounded-lg p-8 md:p-10">
+                <h2 className="font-display text-2xl text-[#0B1120] mb-2">
                   {t("Request Pilot Package", "اطلب باقة الـ Pilot")}
                 </h2>
-                <p className="text-white/40 text-sm mb-8">
+                <p className="text-gray-500 text-sm mb-8">
                   {t(
                     "90-day pilot — one simulation, 50 trainees, full performance reporting.",
                     "تجربة 90 يوماً — محاكاة واحدة، 50 متدرباً، تقرير أداء كامل."
@@ -74,7 +76,7 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                      <label className="font-label text-white/50 mb-2 block">{t("Full Name", "الاسم الكامل")}</label>
+                      <label className="text-sm text-gray-600 font-medium mb-2 block">{t("Full Name", "الاسم الكامل")}</label>
                       <input
                         type="text"
                         name="name"
@@ -82,11 +84,11 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         placeholder={t("Ahmed Al-Mansouri", "أحمد المنصوري")}
-                        className="w-full px-4 py-3 bg-[#0A1628] border border-white/10 text-white placeholder:text-white/20 focus:border-[#E8622A] focus:ring-1 focus:ring-[#E8622A]/30 focus:outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0B1120] placeholder:text-gray-400 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all text-sm"
                       />
                     </div>
                     <div>
-                      <label className="font-label text-white/50 mb-2 block">{t("Company", "الشركة")}</label>
+                      <label className="text-sm text-gray-600 font-medium mb-2 block">{t("Company", "الشركة")}</label>
                       <input
                         type="text"
                         name="company"
@@ -94,14 +96,14 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         placeholder={t("Cairo Petroleum", "القاهرة للبترول")}
-                        className="w-full px-4 py-3 bg-[#0A1628] border border-white/10 text-white placeholder:text-white/20 focus:border-[#E8622A] focus:ring-1 focus:ring-[#E8622A]/30 focus:outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0B1120] placeholder:text-gray-400 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all text-sm"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                      <label className="font-label text-white/50 mb-2 block">{t("Email", "البريد الإلكتروني")}</label>
+                      <label className="text-sm text-gray-600 font-medium mb-2 block">{t("Email", "البريد الإلكتروني")}</label>
                       <input
                         type="email"
                         name="email"
@@ -109,17 +111,17 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         placeholder="ahmed@company.com"
-                        className="w-full px-4 py-3 bg-[#0A1628] border border-white/10 text-white placeholder:text-white/20 focus:border-[#E8622A] focus:ring-1 focus:ring-[#E8622A]/30 focus:outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0B1120] placeholder:text-gray-400 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all text-sm"
                       />
                     </div>
                     <div>
-                      <label className="font-label text-white/50 mb-2 block">{t("Role", "الدور الوظيفي")}</label>
+                      <label className="text-sm text-gray-600 font-medium mb-2 block">{t("Role", "الدور الوظيفي")}</label>
                       <select
                         name="role"
                         value={formData.role}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-[#0A1628] border border-white/10 text-white focus:border-[#E8622A] focus:ring-1 focus:ring-[#E8622A]/30 focus:outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0B1120] rounded-lg focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all text-sm"
                       >
                         <option value="">{t("Select Role", "اختر الدور")}</option>
                         <option value="HSE Manager">{t("HSE Manager", "مدير HSE")}</option>
@@ -134,7 +136,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="font-label text-white/50 mb-2 block">{t("Message", "الرسالة")}</label>
+                    <label className="text-sm text-gray-600 font-medium mb-2 block">{t("Message", "الرسالة")}</label>
                     <textarea
                       name="message"
                       value={formData.message}
@@ -145,14 +147,14 @@ export default function Contact() {
                         "Tell us about your facility, workforce size, and training challenges...",
                         "أخبرنا عن منشأتك وحجم القوى العاملة وتحديات التدريب..."
                       )}
-                      className="w-full px-4 py-3 bg-[#0A1628] border border-white/10 text-white placeholder:text-white/20 focus:border-[#E8622A] focus:ring-1 focus:ring-[#E8622A]/30 focus:outline-none transition-all text-sm resize-none"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0B1120] placeholder:text-gray-400 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all text-sm resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={submitContactMutation.isPending}
-                    className="btn-primary w-full justify-center"
+                    className="btn-gold w-full justify-center"
                   >
                     {submitContactMutation.isPending
                       ? t("Submitting...", "جاري الإرسال...")
@@ -166,36 +168,24 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="lg:col-span-2 space-y-8">
               {/* Offices */}
-              <div className="card-navy rounded-sm p-8">
-                <h3 className="font-display text-lg font-bold text-white mb-6">
+              <div className="card-light rounded-lg p-8">
+                <h3 className="font-display text-xl text-[#0B1120] mb-6">
                   {t("Our Offices", "مكاتبنا")}
                 </h3>
                 <div className="space-y-6">
                   {[
-                    {
-                      city: t("Cairo, Egypt", "القاهرة، مصر"),
-                      address: t("77 Road 104, Maadi", "٧٧ شارع ١٠٤، المعادي"),
-                      tag: "HQ",
-                    },
-                    {
-                      city: t("Dubai, UAE", "دبي، الإمارات"),
-                      address: t("Gulf Operations Hub", "مركز عمليات الخليج"),
-                      tag: "OPS",
-                    },
-                    {
-                      city: t("Riyadh, KSA", "الرياض، السعودية"),
-                      address: t("Business Development", "تطوير الأعمال"),
-                      tag: "BD",
-                    },
+                    { city: t("Cairo, Egypt", "القاهرة، مصر"), address: t("77 Road 104, Maadi", "٧٧ شارع ١٠٤، المعادي"), tag: "HQ" },
+                    { city: t("Dubai, UAE", "دبي، الإمارات"), address: t("Gulf Operations Hub", "مركز عمليات الخليج"), tag: "OPS" },
+                    { city: t("Riyadh, KSA", "الرياض، السعودية"), address: t("Business Development", "تطوير الأعمال"), tag: "BD" },
                   ].map((office, i) => (
                     <div key={i} className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-sm bg-[#00B4D8]/10 border border-[#00B4D8]/20 flex items-center justify-center shrink-0">
-                        <MapPin className="w-5 h-5 text-[#00B4D8]" />
+                      <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                        <MapPin className="w-5 h-5 text-gold" />
                       </div>
                       <div>
-                        <p className="text-white font-medium text-sm">{office.city}</p>
-                        <p className="text-white/40 text-sm">{office.address}</p>
-                        <span className="font-label text-[10px] text-[#E8622A] mt-1 inline-block">{office.tag}</span>
+                        <p className="text-[#0B1120] font-medium text-sm">{office.city}</p>
+                        <p className="text-gray-500 text-sm">{office.address}</p>
+                        <span className="text-gold text-xs font-medium mt-1 inline-block">{office.tag}</span>
                       </div>
                     </div>
                   ))}
@@ -203,44 +193,44 @@ export default function Contact() {
               </div>
 
               {/* Direct Contact */}
-              <div className="card-navy rounded-sm p-8">
-                <h3 className="font-display text-lg font-bold text-white mb-6">
+              <div className="card-light rounded-lg p-8">
+                <h3 className="font-display text-xl text-[#0B1120] mb-6">
                   {t("Direct Contact", "تواصل مباشر")}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-sm bg-[#E8622A]/10 border border-[#E8622A]/20 flex items-center justify-center shrink-0">
-                      <Mail className="w-5 h-5 text-[#E8622A]" />
+                    <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                      <Mail className="w-5 h-5 text-gold" />
                     </div>
                     <div>
-                      <p className="text-white/40 text-xs mb-0.5">{t("Email", "البريد")}</p>
-                      <p className="text-white text-sm">hello@simulxr.com</p>
+                      <p className="text-gray-500 text-xs mb-0.5">{t("Email", "البريد")}</p>
+                      <p className="text-[#0B1120] text-sm font-medium">hello@simulxr.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-sm bg-[#E8622A]/10 border border-[#E8622A]/20 flex items-center justify-center shrink-0">
-                      <Phone className="w-5 h-5 text-[#E8622A]" />
+                    <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                      <Phone className="w-5 h-5 text-gold" />
                     </div>
                     <div>
-                      <p className="text-white/40 text-xs mb-0.5">{t("Phone", "الهاتف")}</p>
-                      <p className="text-white text-sm">+20 2 2516 8000</p>
+                      <p className="text-gray-500 text-xs mb-0.5">{t("Phone", "الهاتف")}</p>
+                      <p className="text-[#0B1120] text-sm font-medium">+20 2 2516 8000</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Pilot Info */}
-              <div className="card-navy rounded-sm p-8 border-l-2 border-[#E8622A]">
-                <h3 className="font-display text-lg font-bold text-white mb-3">
+              <div className="bg-[#0B1120] rounded-lg p-8">
+                <h3 className="font-display text-xl text-white mb-4">
                   {t("What's in the Pilot?", "ماذا يتضمن الـ Pilot؟")}
                 </h3>
-                <ul className="text-white/40 text-sm space-y-2 leading-relaxed">
-                  <li>• {t("1 custom simulation from your CAD files", "محاكاة مخصصة واحدة من ملفات CAD الخاصة بك")}</li>
-                  <li>• {t("Up to 50 trainees", "حتى 50 متدرباً")}</li>
-                  <li>• {t("Meta Quest headsets provided", "سماعات Meta Quest مقدمة")}</li>
-                  <li>• {t("90-day deployment period", "فترة نشر 90 يوماً")}</li>
-                  <li>• {t("Full performance analytics dashboard", "لوحة تحليلات أداء كاملة")}</li>
-                  <li>• {t("HSE compliance reporting", "تقارير امتثال HSE")}</li>
+                <ul className="text-white/50 text-sm space-y-2 leading-relaxed">
+                  <li className="flex items-start gap-2"><span className="text-gold">•</span> {t("1 custom simulation from your CAD files", "محاكاة مخصصة واحدة من ملفات CAD الخاصة بك")}</li>
+                  <li className="flex items-start gap-2"><span className="text-gold">•</span> {t("Up to 50 trainees", "حتى 50 متدرباً")}</li>
+                  <li className="flex items-start gap-2"><span className="text-gold">•</span> {t("Meta Quest headsets provided", "سماعات Meta Quest مقدمة")}</li>
+                  <li className="flex items-start gap-2"><span className="text-gold">•</span> {t("90-day deployment period", "فترة نشر 90 يوماً")}</li>
+                  <li className="flex items-start gap-2"><span className="text-gold">•</span> {t("Full performance analytics dashboard", "لوحة تحليلات أداء كاملة")}</li>
+                  <li className="flex items-start gap-2"><span className="text-gold">•</span> {t("HSE compliance reporting", "تقارير امتثال HSE")}</li>
                 </ul>
               </div>
             </div>
