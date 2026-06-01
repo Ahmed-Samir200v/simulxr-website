@@ -17,7 +17,7 @@ export default function Industries() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 bg-[#0B1120] overflow-hidden">
+      <section className="relative pt-40 pb-24 bg-[#0F2A4A] overflow-hidden">
         <div className="container relative z-10">
           <span className="section-eyebrow mb-4 block animate-fadeUp">
             {t("INDUSTRIES WE SERVE", "القطاعات التي نخدمها")}
@@ -29,8 +29,8 @@ export default function Industries() {
           </h1>
           <p className="text-white/50 max-w-xl mt-6 text-lg leading-relaxed animate-fadeUp-delay-2">
             {t(
-              "We don't sell generic VR experiences. Every simulation is engineered for the specific hazards, equipment, and procedures of your industry.",
-              "لا نبيع تجارب VR عامة. كل محاكاة مصممة للمخاطر والمعدات والإجراءات المحددة لصناعتك."
+              "We don't sell generic XR experiences. Every simulation is engineered for the specific hazards, equipment, and procedures of your industry.",
+              "لا نبيع تجارب XR عامة. كل محاكاة مصممة للمخاطر والمعدات والإجراءات المحددة لصناعتك."
             )}
           </p>
         </div>
@@ -45,15 +45,15 @@ export default function Industries() {
               return (
                 <div key={i} className="card-light rounded-lg p-8 group">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center">
-                      <Icon className="w-7 h-7 text-gold" />
+                    <div className="w-14 h-14 rounded-full bg-[#D4622B]/10 border border-[#D4622B]/20 flex items-center justify-center">
+                      <Icon className="w-7 h-7 text-[#D4622B]" />
                     </div>
                     <span className="text-xs text-gray-400 tracking-wider">{industry.tag}</span>
                   </div>
-                  <h3 className="font-display text-2xl text-[#0B1120] mb-4 group-hover:text-gold transition-colors">{industry.title}</h3>
+                  <h3 className="font-display text-2xl text-[#0F2A4A] mb-4 group-hover:text-[#D4622B] transition-colors">{industry.title}</h3>
                   <p className="text-gray-500 leading-relaxed mb-4">{industry.desc}</p>
                   <p className="text-sm text-gray-400 border-t border-gray-100 pt-4">
-                    <span className="text-gold font-medium">{t("Key scenarios:", "السيناريوهات:")}</span> {industry.scenarios}
+                    <span className="text-[#00B4D8] font-medium">{t("Key scenarios:", "السيناريوهات:")}</span> {industry.scenarios}
                   </p>
                 </div>
               );
@@ -63,18 +63,18 @@ export default function Industries() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gold">
+      <section className="py-24 bg-[#D4622B]">
         <div className="container text-center">
-          <h2 className="font-display text-4xl sm:text-5xl text-[#0B1120] mb-6">
+          <h2 className="font-display text-4xl sm:text-5xl text-white mb-6">
             {t("Don't see your industry?", "لا ترى صناعتك؟")}
           </h2>
-          <p className="text-[#0B1120]/70 max-w-xl mx-auto mb-10 text-lg">
+          <p className="text-white/80 max-w-xl mx-auto mb-10 text-lg">
             {t(
               "We build custom simulations for any high-risk industrial environment. Tell us about your training challenges.",
               "نبني محاكاة مخصصة لأي بيئة صناعية عالية الخطورة. أخبرنا عن تحديات التدريب لديك."
             )}
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#0B1120] text-white font-medium hover:bg-[#0B1120]/90 transition-all hover:-translate-y-0.5">
+          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#D4622B] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
             {t("Contact Us", "تواصل معنا")}
             <ArrowRight className="w-4 h-4" />
           </Link>

@@ -37,7 +37,7 @@ export default function Contact() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 bg-[#0B1120] overflow-hidden">
+      <section className="relative pt-40 pb-24 bg-[#0F2A4A] overflow-hidden">
         <div className="container relative z-10">
           <span className="section-eyebrow mb-4 block animate-fadeUp">
             {t("GET STARTED", "ابدأ الآن")}
@@ -63,7 +63,7 @@ export default function Contact() {
             {/* Form */}
             <div className="lg:col-span-3">
               <div className="card-light rounded-lg p-8 md:p-10">
-                <h2 className="font-display text-2xl text-[#0B1120] mb-2">
+                <h2 className="font-display text-2xl text-[#0F2A4A] mb-2">
                   {t("Request Pilot Package", "اطلب باقة الـ Pilot")}
                 </h2>
                 <p className="text-gray-500 text-sm mb-8">
@@ -84,7 +84,7 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         placeholder={t("Ahmed Al-Mansouri", "أحمد المنصوري")}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0B1120] placeholder:text-gray-400 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] placeholder:text-gray-400 rounded-lg focus:border-[#D4622B] focus:ring-1 focus:ring-[#D4622B]/30 focus:outline-none transition-all text-sm"
                       />
                     </div>
                     <div>
@@ -96,7 +96,7 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         placeholder={t("Cairo Petroleum", "القاهرة للبترول")}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0B1120] placeholder:text-gray-400 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] placeholder:text-gray-400 rounded-lg focus:border-[#D4622B] focus:ring-1 focus:ring-[#D4622B]/30 focus:outline-none transition-all text-sm"
                       />
                     </div>
                   </div>
@@ -111,7 +111,7 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         placeholder="ahmed@company.com"
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0B1120] placeholder:text-gray-400 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] placeholder:text-gray-400 rounded-lg focus:border-[#D4622B] focus:ring-1 focus:ring-[#D4622B]/30 focus:outline-none transition-all text-sm"
                       />
                     </div>
                     <div>
@@ -121,7 +121,7 @@ export default function Contact() {
                         value={formData.role}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0B1120] rounded-lg focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] rounded-lg focus:border-[#D4622B] focus:ring-1 focus:ring-[#D4622B]/30 focus:outline-none transition-all text-sm"
                       >
                         <option value="">{t("Select Role", "اختر الدور")}</option>
                         <option value="HSE Manager">{t("HSE Manager", "مدير HSE")}</option>
@@ -147,7 +147,7 @@ export default function Contact() {
                         "Tell us about your facility, workforce size, and training challenges...",
                         "أخبرنا عن منشأتك وحجم القوى العاملة وتحديات التدريب..."
                       )}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0B1120] placeholder:text-gray-400 rounded-lg focus:border-gold focus:ring-1 focus:ring-gold/30 focus:outline-none transition-all text-sm resize-none"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] placeholder:text-gray-400 rounded-lg focus:border-[#D4622B] focus:ring-1 focus:ring-[#D4622B]/30 focus:outline-none transition-all text-sm resize-none"
                     />
                   </div>
 
@@ -167,9 +167,8 @@ export default function Contact() {
 
             {/* Contact Info */}
             <div className="lg:col-span-2 space-y-8">
-              {/* Offices */}
               <div className="card-light rounded-lg p-8">
-                <h3 className="font-display text-xl text-[#0B1120] mb-6">
+                <h3 className="font-display text-xl text-[#0F2A4A] mb-6">
                   {t("Our Offices", "مكاتبنا")}
                 </h3>
                 <div className="space-y-6">
@@ -179,58 +178,56 @@ export default function Contact() {
                     { city: t("Riyadh, KSA", "الرياض، السعودية"), address: t("Business Development", "تطوير الأعمال"), tag: "BD" },
                   ].map((office, i) => (
                     <div key={i} className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                        <MapPin className="w-5 h-5 text-gold" />
+                      <div className="w-10 h-10 rounded-full bg-[#D4622B]/10 border border-[#D4622B]/20 flex items-center justify-center shrink-0">
+                        <MapPin className="w-5 h-5 text-[#D4622B]" />
                       </div>
                       <div>
-                        <p className="text-[#0B1120] font-medium text-sm">{office.city}</p>
+                        <p className="text-[#0F2A4A] font-medium text-sm">{office.city}</p>
                         <p className="text-gray-500 text-sm">{office.address}</p>
-                        <span className="text-gold text-xs font-medium mt-1 inline-block">{office.tag}</span>
+                        <span className="text-[#D4622B] text-xs font-medium mt-1 inline-block">{office.tag}</span>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Direct Contact */}
               <div className="card-light rounded-lg p-8">
-                <h3 className="font-display text-xl text-[#0B1120] mb-6">
+                <h3 className="font-display text-xl text-[#0F2A4A] mb-6">
                   {t("Direct Contact", "تواصل مباشر")}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                      <Mail className="w-5 h-5 text-gold" />
+                    <div className="w-10 h-10 rounded-full bg-[#D4622B]/10 border border-[#D4622B]/20 flex items-center justify-center shrink-0">
+                      <Mail className="w-5 h-5 text-[#D4622B]" />
                     </div>
                     <div>
                       <p className="text-gray-500 text-xs mb-0.5">{t("Email", "البريد")}</p>
-                      <p className="text-[#0B1120] text-sm font-medium">hello@simulxr.com</p>
+                      <p className="text-[#0F2A4A] text-sm font-medium">hello@simulxr.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                      <Phone className="w-5 h-5 text-gold" />
+                    <div className="w-10 h-10 rounded-full bg-[#D4622B]/10 border border-[#D4622B]/20 flex items-center justify-center shrink-0">
+                      <Phone className="w-5 h-5 text-[#D4622B]" />
                     </div>
                     <div>
                       <p className="text-gray-500 text-xs mb-0.5">{t("Phone", "الهاتف")}</p>
-                      <p className="text-[#0B1120] text-sm font-medium">+20 2 2516 8000</p>
+                      <p className="text-[#0F2A4A] text-sm font-medium">+20 2 2516 8000</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Pilot Info */}
-              <div className="bg-[#0B1120] rounded-lg p-8">
+              <div className="bg-[#0F2A4A] rounded-lg p-8">
                 <h3 className="font-display text-xl text-white mb-4">
                   {t("What's in the Pilot?", "ماذا يتضمن الـ Pilot؟")}
                 </h3>
                 <ul className="text-white/50 text-sm space-y-2 leading-relaxed">
-                  <li className="flex items-start gap-2"><span className="text-gold">•</span> {t("1 custom simulation from your CAD files", "محاكاة مخصصة واحدة من ملفات CAD الخاصة بك")}</li>
-                  <li className="flex items-start gap-2"><span className="text-gold">•</span> {t("Up to 50 trainees", "حتى 50 متدرباً")}</li>
-                  <li className="flex items-start gap-2"><span className="text-gold">•</span> {t("Meta Quest headsets provided", "سماعات Meta Quest مقدمة")}</li>
-                  <li className="flex items-start gap-2"><span className="text-gold">•</span> {t("90-day deployment period", "فترة نشر 90 يوماً")}</li>
-                  <li className="flex items-start gap-2"><span className="text-gold">•</span> {t("Full performance analytics dashboard", "لوحة تحليلات أداء كاملة")}</li>
-                  <li className="flex items-start gap-2"><span className="text-gold">•</span> {t("HSE compliance reporting", "تقارير امتثال HSE")}</li>
+                  <li className="flex items-start gap-2"><span className="text-[#D4622B]">•</span> {t("1 custom simulation from your CAD files", "محاكاة مخصصة واحدة من ملفات CAD الخاصة بك")}</li>
+                  <li className="flex items-start gap-2"><span className="text-[#D4622B]">•</span> {t("Up to 50 trainees", "حتى 50 متدرباً")}</li>
+                  <li className="flex items-start gap-2"><span className="text-[#D4622B]">•</span> {t("Meta Quest headsets provided", "سماعات Meta Quest مقدمة")}</li>
+                  <li className="flex items-start gap-2"><span className="text-[#D4622B]">•</span> {t("90-day deployment period", "فترة نشر 90 يوماً")}</li>
+                  <li className="flex items-start gap-2"><span className="text-[#D4622B]">•</span> {t("Full performance analytics dashboard", "لوحة تحليلات أداء كاملة")}</li>
+                  <li className="flex items-start gap-2"><span className="text-[#D4622B]">•</span> {t("HSE compliance reporting", "تقارير امتثال HSE")}</li>
                 </ul>
               </div>
             </div>

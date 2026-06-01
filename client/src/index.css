@@ -4,15 +4,25 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "DM Serif Display", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
-  --font-arabic: "IBM Plex Sans Arabic", "Inter", sans-serif;
-  --color-gold: oklch(0.72 0.12 80);
-  --color-navy: oklch(0.10 0.03 260);
-  --color-navy-mid: oklch(0.14 0.04 255);
-  --color-navy-light: oklch(0.18 0.04 255);
-  --color-white: oklch(0.99 0 0);
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-sans:    "Inter", system-ui, sans-serif;
+  --font-mono:    "IBM Plex Mono", monospace;
+  --font-arabic:  "Inter", sans-serif;
+
+  /* Brand palette */
+  --color-navy:         #0F2A4A;
+  --color-navy-mid:     #0D2040;
+  --color-navy-light:   #1A3A5C;
+  --color-navy-surface: #0A1E36;
+  --color-orange:       #D4622B;
+  --color-orange-light: #E07540;
+  --color-orange-dark:  #B85325;
+  --color-cyan:         #00B4D8;
+  --color-cyan-light:   #22C4E8;
+  --color-cyan-dark:    #0090B0;
+  --color-graphite:     #374151;
+  --color-pale-steel:   #F5F6F8;
+  --color-white:        #FFFFFF;
 }
 
 @theme inline {
@@ -55,74 +65,74 @@
 }
 
 :root {
-  --primary: oklch(0.72 0.12 80);
-  --primary-foreground: oklch(0.10 0.03 260);
-  --sidebar-primary: oklch(0.72 0.12 80);
-  --sidebar-primary-foreground: oklch(0.10 0.03 260);
-  --chart-1: oklch(0.72 0.12 80);
-  --chart-2: oklch(0.60 0.10 220);
-  --chart-3: oklch(0.65 0.15 280);
-  --chart-4: oklch(0.70 0.12 150);
-  --chart-5: oklch(0.68 0.14 30);
+  --primary: #D4622B;
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #D4622B;
+  --sidebar-primary-foreground: #FFFFFF;
+  --chart-1: #D4622B;
+  --chart-2: #00B4D8;
+  --chart-3: #1A3A5C;
+  --chart-4: #22C4E8;
+  --chart-5: #E07540;
   --radius: 0.5rem;
-  --background: oklch(0.10 0.03 260);
-  --foreground: oklch(0.95 0.005 260);
-  --card: oklch(0.14 0.04 255);
-  --card-foreground: oklch(0.95 0.005 260);
-  --popover: oklch(0.14 0.04 255);
-  --popover-foreground: oklch(0.95 0.005 260);
-  --secondary: oklch(0.18 0.04 255);
-  --secondary-foreground: oklch(0.85 0.005 260);
-  --muted: oklch(0.18 0.04 255);
-  --muted-foreground: oklch(0.55 0.02 260);
-  --accent: oklch(0.72 0.12 80);
-  --accent-foreground: oklch(0.10 0.03 260);
+  --background: #0F2A4A;
+  --foreground: #F5F6F8;
+  --card: #1A3A5C;
+  --card-foreground: #F5F6F8;
+  --popover: #1A3A5C;
+  --popover-foreground: #F5F6F8;
+  --secondary: #1A3A5C;
+  --secondary-foreground: #9CA3AF;
+  --muted: #1A3A5C;
+  --muted-foreground: #6B7280;
+  --accent: #D4622B;
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.22 0.02 260 / 0.5);
-  --input: oklch(0.18 0.04 255);
-  --ring: oklch(0.72 0.12 80);
-  --sidebar: oklch(0.12 0.04 255);
-  --sidebar-foreground: oklch(0.95 0.005 260);
-  --sidebar-accent: oklch(0.18 0.04 255);
-  --sidebar-accent-foreground: oklch(0.95 0.005 260);
-  --sidebar-border: oklch(0.22 0.03 260);
-  --sidebar-ring: oklch(0.72 0.12 80);
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: #1A3A5C;
+  --ring: #D4622B;
+  --sidebar: #0A1E36;
+  --sidebar-foreground: #F5F6F8;
+  --sidebar-accent: #1A3A5C;
+  --sidebar-accent-foreground: #F5F6F8;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #D4622B;
 }
 
 .dark {
-  --primary: oklch(0.72 0.12 80);
-  --primary-foreground: oklch(0.10 0.03 260);
-  --sidebar-primary: oklch(0.72 0.12 80);
-  --sidebar-primary-foreground: oklch(0.10 0.03 260);
-  --background: oklch(0.10 0.03 260);
-  --foreground: oklch(0.95 0.005 260);
-  --card: oklch(0.14 0.04 255);
-  --card-foreground: oklch(0.95 0.005 260);
-  --popover: oklch(0.14 0.04 255);
-  --popover-foreground: oklch(0.95 0.005 260);
-  --secondary: oklch(0.18 0.04 255);
-  --secondary-foreground: oklch(0.85 0.005 260);
-  --muted: oklch(0.18 0.04 255);
-  --muted-foreground: oklch(0.55 0.02 260);
-  --accent: oklch(0.72 0.12 80);
-  --accent-foreground: oklch(0.10 0.03 260);
+  --primary: #D4622B;
+  --primary-foreground: #FFFFFF;
+  --sidebar-primary: #D4622B;
+  --sidebar-primary-foreground: #FFFFFF;
+  --background: #0F2A4A;
+  --foreground: #F5F6F8;
+  --card: #1A3A5C;
+  --card-foreground: #F5F6F8;
+  --popover: #1A3A5C;
+  --popover-foreground: #F5F6F8;
+  --secondary: #1A3A5C;
+  --secondary-foreground: #9CA3AF;
+  --muted: #1A3A5C;
+  --muted-foreground: #6B7280;
+  --accent: #D4622B;
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.65 0.22 25);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.22 0.02 260 / 0.5);
-  --input: oklch(0.18 0.04 255);
-  --ring: oklch(0.72 0.12 80);
-  --chart-1: oklch(0.72 0.12 80);
-  --chart-2: oklch(0.60 0.10 220);
-  --chart-3: oklch(0.65 0.15 280);
-  --chart-4: oklch(0.70 0.12 150);
-  --chart-5: oklch(0.68 0.14 30);
-  --sidebar: oklch(0.12 0.04 255);
-  --sidebar-foreground: oklch(0.95 0.005 260);
-  --sidebar-accent: oklch(0.18 0.04 255);
-  --sidebar-accent-foreground: oklch(0.95 0.005 260);
-  --sidebar-border: oklch(0.22 0.03 260);
-  --sidebar-ring: oklch(0.72 0.12 80);
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: #1A3A5C;
+  --ring: #D4622B;
+  --chart-1: #D4622B;
+  --chart-2: #00B4D8;
+  --chart-3: #1A3A5C;
+  --chart-4: #22C4E8;
+  --chart-5: #E07540;
+  --sidebar: #0A1E36;
+  --sidebar-foreground: #F5F6F8;
+  --sidebar-accent: #1A3A5C;
+  --sidebar-accent-foreground: #F5F6F8;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #D4622B;
 }
 
 @layer base {
@@ -178,60 +188,73 @@
   }
 }
 
-/* ===== SimulXR Untex Factory Design System ===== */
+/* ===== SimulXR Design System ===== */
 
-/* Typography */
+/* Typography — Inter only */
 .font-display {
-  font-family: "DM Serif Display", Georgia, serif;
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 700;
 }
 
 .font-label {
   font-family: "Inter", system-ui, sans-serif;
   font-size: 0.8125rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-style: italic;
+  font-weight: 600;
 }
 
 .font-arabic {
-  font-family: "IBM Plex Sans Arabic", "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* RTL support */
 [dir="rtl"] body {
-  font-family: "IBM Plex Sans Arabic", "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
   text-align: right;
 }
 
 [dir="rtl"] .font-display {
-  font-family: "IBM Plex Sans Arabic", "DM Serif Display", serif;
+  font-family: "Inter", sans-serif;
 }
 
-/* Gold accent color utility */
+/* Orange accent (primary CTA) */
 .text-gold {
-  color: #D4A843;
+  color: #D4622B;
 }
 
 .bg-gold {
-  background-color: #D4A843;
+  background-color: #D4622B;
 }
 
 .border-gold {
-  border-color: #D4A843;
+  border-color: #D4622B;
 }
 
-/* Section eyebrow (gold italic uppercase) */
+/* Cyan accent (tech/XR accent) */
+.text-cyan {
+  color: #00B4D8;
+}
+
+.bg-cyan {
+  background-color: #00B4D8;
+}
+
+.border-cyan {
+  border-color: #00B4D8;
+}
+
+/* Section eyebrow — cyan for visibility on dark navy */
 .section-eyebrow {
   font-family: "Inter", system-ui, sans-serif;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-style: italic;
-  color: #D4A843;
+  color: #00B4D8;
 }
 
-/* Section tag bracket style */
+/* Section tag */
 .section-tag {
   font-family: "Inter", system-ui, sans-serif;
   font-size: 0.75rem;
@@ -241,7 +264,7 @@
   color: #9CA3AF;
 }
 
-/* Pill button (Untex style - rounded full, white bg) */
+/* Pill button — white on dark, for hero */
 .btn-pill {
   display: inline-flex;
   align-items: center;
@@ -249,23 +272,23 @@
   padding: 0.875rem 2rem;
   border-radius: 9999px;
   font-family: "Inter", system-ui, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9375rem;
   background-color: white;
-  color: #0B1120;
-  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  color: #0F2A4A;
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .btn-pill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
 }
 
 .btn-pill:active {
   transform: scale(0.97);
 }
 
-/* Gold pill button */
+/* Orange CTA button */
 .btn-gold {
   display: inline-flex;
   align-items: center;
@@ -275,21 +298,22 @@
   font-family: "Inter", system-ui, sans-serif;
   font-weight: 600;
   font-size: 0.9375rem;
-  background-color: #D4A843;
-  color: #0B1120;
-  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  background-color: #D4622B;
+  color: #FFFFFF;
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .btn-gold:hover {
+  background-color: #E07540;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(212, 168, 67, 0.3);
+  box-shadow: 0 8px 24px rgba(212, 98, 43, 0.35);
 }
 
 .btn-gold:active {
   transform: scale(0.97);
 }
 
-/* Outline button (dark border) */
+/* Outline button — white border on dark bg */
 .btn-outline-dark {
   display: inline-flex;
   align-items: center;
@@ -299,15 +323,15 @@
   font-family: "Inter", system-ui, sans-serif;
   font-weight: 500;
   font-size: 0.9375rem;
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
   color: white;
   background: transparent;
-  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .btn-outline-dark:hover {
-  border-color: #D4A843;
-  color: #D4A843;
+  border-color: #D4622B;
+  color: #D4622B;
   transform: translateY(-2px);
 }
 
@@ -315,19 +339,20 @@
   transform: scale(0.97);
 }
 
-/* Card styles */
+/* Card — dark navy surface */
 .card-dark {
-  background: #0F1A2E;
+  background: #1A3A5C;
   border: 1px solid rgba(255, 255, 255, 0.06);
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .card-dark:hover {
-  border-color: rgba(212, 168, 67, 0.4);
+  border-color: rgba(212, 98, 43, 0.35);
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
+/* Card — light surface (white sections) */
 .card-light {
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -335,21 +360,21 @@
 }
 
 .card-light:hover {
-  border-color: rgba(212, 168, 67, 0.4);
+  border-color: rgba(212, 98, 43, 0.3);
   transform: translateY(-6px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* Nav pill container (Untex style) */
+/* Nav pill container */
 .nav-pill-container {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 9999px;
   padding: 0.5rem 1.5rem;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
-/* Nav glass effect */
+/* Nav glass blur */
 .nav-glass {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -407,10 +432,10 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Gold dot after heading */
+/* Heading dot accent */
 .heading-dot::after {
   content: ".";
-  color: #D4A843;
+  color: #D4622B;
 }
 
 /* Smooth scroll */
@@ -418,15 +443,14 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Stats box gold bg */
-.stats-gold {
-  background: #D4A843;
-  color: #0B1120;
+/* Stats boxes */
+.stats-orange {
+  background: #D4622B;
+  color: #FFFFFF;
 }
 
-/* Stats box dark bg */
 .stats-dark {
-  background: #0F1A2E;
+  background: #1A3A5C;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }

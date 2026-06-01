@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { BRAND } from "@/config/branding";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,19 +34,22 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0B1120]/95 nav-glass border-b border-white/5 py-3"
+          ? "bg-[#0F2A4A]/95 nav-glass border-b border-white/5 py-3"
           : "bg-transparent py-5"
       }`}
     >
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <span className="text-white text-xl font-bold tracking-wider" style={{ fontFamily: "'Inter', sans-serif" }}>
-            SIMUL<span className="text-gold">XR</span>
-          </span>
+          <img
+            src={BRAND.logo}
+            alt={BRAND.name}
+            className="h-9 w-auto"
+            draggable={false}
+          />
         </Link>
 
-        {/* Center nav links in pill container (Untex style) */}
+        {/* Center nav links in pill container */}
         <div className="hidden lg:flex items-center nav-pill-container">
           {navLinks.map((link, i) => (
             <span key={link.href} className="flex items-center">
@@ -53,7 +57,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-3 py-1 text-sm font-medium transition-colors duration-200 ${
                   location === link.href
-                    ? "text-gold"
+                    ? "text-[#D4622B]"
                     : "text-white/70 hover:text-white"
                 }`}
               >
@@ -70,16 +74,14 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <button
             onClick={() => setLang(lang === "en" ? "ar" : "en")}
-            className="text-xs text-white/60 hover:text-white border border-white/20 hover:border-gold/40 px-3 py-1.5 rounded-full transition-all font-medium tracking-wide"
+            className="text-xs text-white/60 hover:text-white border border-white/20 hover:border-[#D4622B]/40 px-3 py-1.5 rounded-full transition-all font-medium tracking-wide"
           >
             {lang === "en" ? "عربي" : "EN"}
           </button>
 
-          <Link href="/contact" className="btn-pill text-sm">
+          <Link href="/contact" className="btn-gold text-sm">
             {t("Request A Demo", "اطلب عرضاً")}
-            <span className="w-6 h-6 rounded-full bg-gold flex items-center justify-center">
-              <ArrowRight className="w-3.5 h-3.5 text-[#0B1120]" />
-            </span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
 
@@ -103,16 +105,17 @@ export default function Navbar() {
 
       {/* Mobile menu overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[60px] bg-[#0B1120]/98 nav-glass z-40">
+        <div className="lg:hidden fixed inset-0 top-[60px] bg-[#0F2A4A]/98 nav-glass z-40">
           <div className="container py-8 flex flex-col gap-2">
+            <img src={BRAND.logo} alt={BRAND.name} className="h-8 w-auto mb-4" draggable={false} />
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`px-4 py-3 text-lg font-medium transition-colors ${
                   location === link.href
-                    ? "text-gold"
-                    : "text-white/80 hover:text-gold"
+                    ? "text-[#D4622B]"
+                    : "text-white/80 hover:text-[#D4622B]"
                 }`}
               >
                 {link.label}

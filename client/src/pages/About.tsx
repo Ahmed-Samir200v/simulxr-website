@@ -2,16 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight, Shield, Target, Heart, BarChart3, Mountain, Handshake, MapPin, ChevronRight } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
-
-const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663048751930/DC4FNTfcHyvuxQWATJPrwg/hero-bg-auykFKKejJF8W8DzHQxasg.webp";
-const SIM_IMAGES = {
-  emergency: "https://d2xsxph8kpxj0f.cloudfront.net/310519663048751930/DC4FNTfcHyvuxQWATJPrwg/sim-emergency-MDu2SyrPqjHMYtfLuFAMMs.webp",
-  equipment: "https://d2xsxph8kpxj0f.cloudfront.net/310519663048751930/DC4FNTfcHyvuxQWATJPrwg/sim-equipment-jXJpjtz2kpYaq7vK9oas3b.webp",
-  confined: "https://d2xsxph8kpxj0f.cloudfront.net/310519663048751930/DC4FNTfcHyvuxQWATJPrwg/sim-confined-Ux2cYqBEqiUCxLB8cvH397.webp",
-  onboarding: "https://d2xsxph8kpxj0f.cloudfront.net/310519663048751930/DC4FNTfcHyvuxQWATJPrwg/sim-onboarding-fHPPuvivUtFDGH7M2vAvm9.webp",
-  maintenance: "https://d2xsxph8kpxj0f.cloudfront.net/310519663048751930/DC4FNTfcHyvuxQWATJPrwg/sim-maintenance-AqoA7zPcBcpttopqyKJAKU.webp",
-  loto: "https://d2xsxph8kpxj0f.cloudfront.net/310519663048751930/DC4FNTfcHyvuxQWATJPrwg/sim-loto-5LrYtsPXEMPjJPyZLYC3Md.webp",
-};
+import { IMAGES } from "@/lib/assets";
 
 export default function About() {
   const { t } = useLanguage();
@@ -25,7 +16,7 @@ export default function About() {
         "Every decision we make is tested with one question: does it make workers safer? If the answer isn't yes, we don't ship it.",
         "كل قرار نتخذه يُختبر بسؤال واحد: هل يجعل العمال أكثر أماناً؟ إذا لم تكن الإجابة نعم، لا ننشره."
       ),
-      img: SIM_IMAGES.emergency,
+      img: IMAGES.simEmergency,
     },
     {
       icon: Target,
@@ -34,7 +25,7 @@ export default function About() {
         "Oil & gas is unforgiving. We build scenarios that reflect exact operational reality — not approximations. Every valve, every alarm, every procedure matches your facility.",
         "صناعة النفط لا تقبل التقريب. نبني سيناريوهات تعكس الواقع التشغيلي بدقة — كل صمام، كل إنذار، كل إجراء يطابق منشأتك."
       ),
-      img: SIM_IMAGES.equipment,
+      img: IMAGES.simEquipment,
     },
     {
       icon: Heart,
@@ -43,7 +34,7 @@ export default function About() {
         "We design for real workers in high-pressure conditions who need confidence, not just compliance. The interface disappears — the experience stays.",
         "نصمم لعمال حقيقيين في ظروف ضاغطة يحتاجون ثقة لا مجرد امتثال. الواجهة تختفي — التجربة تبقى."
       ),
-      img: SIM_IMAGES.confined,
+      img: IMAGES.simConfined,
     },
     {
       icon: BarChart3,
@@ -52,7 +43,7 @@ export default function About() {
         "We measure outcomes, publish data, and build case studies. Our clients don't take our word for it — they see the numbers.",
         "نقيس النتائج وننشر البيانات ونبني دراسات الحالة. عملاؤنا لا يأخذون كلامنا — يرون الأرقام."
       ),
-      img: SIM_IMAGES.onboarding,
+      img: IMAGES.simOnboarding,
     },
     {
       icon: Mountain,
@@ -61,7 +52,7 @@ export default function About() {
         "Desert refineries, offshore rigs, LNG terminals — these are our deployment zones. We build for the harshest environments because that's where training matters most.",
         "مصافي الصحراء والمنصات البحرية ومحطات LNG — بيئات عملنا. نبني للبيئات الأقسى لأن هناك يكون التدريب أهم."
       ),
-      img: SIM_IMAGES.maintenance,
+      img: IMAGES.simMaintenance,
     },
     {
       icon: Handshake,
@@ -70,7 +61,7 @@ export default function About() {
         "We co-create safety infrastructure with our clients. Long-term relationships develop our product — and their workforce.",
         "نبني بنية تحتية للسلامة مع عملائنا. العلاقات طويلة الأمد هي ما يطوّر منتجنا — وقوتهم العاملة."
       ),
-      img: SIM_IMAGES.loto,
+      img: IMAGES.simLoto,
     },
   ];
 
@@ -79,9 +70,9 @@ export default function About() {
   return (
     <>
       {/* ═══════════════════ HERO ═══════════════════ */}
-      <section className="relative pt-40 pb-24 bg-[#0B1120] overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{ backgroundImage: `url(${HERO_BG})` }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1120]/70 to-[#0B1120]" />
+      <section className="relative pt-40 pb-24 bg-[#0F2A4A] overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{ backgroundImage: `url(${IMAGES.heroBg})` }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0F2A4A]/70 to-[#0F2A4A]" />
         <div className="container relative z-10">
           <span className="section-eyebrow mb-4 block animate-fadeUp">
             {t("OUR STORY", "قصتنا")}
@@ -105,10 +96,10 @@ export default function About() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="section-eyebrow mb-4 block text-gold">
+              <span className="section-eyebrow mb-4 block" style={{ color: "#00B4D8" }}>
                 {t("THE PROBLEM", "المشكلة")}
               </span>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-[#0B1120] mb-6">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-[#0F2A4A] mb-6">
                 {t("Traditional Training Doesn't Prepare for Real Emergencies", "التدريب التقليدي لا يُجهّز للطوارئ الحقيقية")}
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
@@ -118,7 +109,6 @@ export default function About() {
                 )}
               </p>
 
-              {/* Problem vs Solution Table */}
               <div className="space-y-3">
                 {[
                   { problem: t("Traditional training doesn't prepare for real emergencies", "التدريب التقليدي لا يُجهّز للطوارئ الحقيقية"), solution: t("Realistic simulation under real-time pressure", "محاكاة واقعية تحت ضغط الوقت الفعلي") },
@@ -140,16 +130,16 @@ export default function About() {
 
             <div className="relative">
               <div className="aspect-[4/3] rounded-lg overflow-hidden">
-                <img src={SIM_IMAGES.emergency} alt="Industrial VR Training" className="w-full h-full object-cover" />
+                <img src={IMAGES.simEmergency} alt="Industrial XR Training" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-[#0B1120] rounded-lg p-6 shadow-xl max-w-[280px]">
+              <div className="absolute -bottom-6 -left-6 bg-[#0F2A4A] rounded-lg p-6 shadow-xl max-w-[280px]">
                 <blockquote className="text-white/80 text-sm italic leading-relaxed">
                   {t(
                     "\"You can't train courage by reading about it.\"",
                     "\"لا يمكنك تدريب الشجاعة بالقراءة عنها.\""
                   )}
                 </blockquote>
-                <p className="text-gold text-xs mt-2 font-medium">— SIMUL XR</p>
+                <p className="text-[#D4622B] text-xs mt-2 font-medium">— SIMUL XR</p>
               </div>
             </div>
           </div>
@@ -157,11 +147,11 @@ export default function About() {
       </section>
 
       {/* ═══════════════════ MISSION & VISION ═══════════════════ */}
-      <section className="py-24 md:py-32 bg-[#0B1120]">
+      <section className="py-24 md:py-32 bg-[#0F2A4A]">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="card-dark rounded-lg p-10">
-              <span className="text-gold text-sm font-semibold uppercase tracking-wider mb-4 block">
+              <span className="text-[#00B4D8] text-sm font-semibold uppercase tracking-wider mb-4 block">
                 {t("MISSION", "الرسالة")}
               </span>
               <p className="text-white/80 text-lg leading-relaxed">
@@ -172,7 +162,7 @@ export default function About() {
               </p>
             </div>
             <div className="card-dark rounded-lg p-10">
-              <span className="text-gold text-sm font-semibold uppercase tracking-wider mb-4 block">
+              <span className="text-[#00B4D8] text-sm font-semibold uppercase tracking-wider mb-4 block">
                 {t("VISION", "الرؤية")}
               </span>
               <p className="text-white/80 text-lg leading-relaxed">
@@ -186,14 +176,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* ═══════════════════ VALUES — 3T GLOBAL STYLE ═══════════════════ */}
+      {/* ═══════════════════ VALUES ═══════════════════ */}
       <section className="py-24 md:py-32 bg-white">
         <div className="container">
           <div className="text-center mb-12">
-            <span className="section-eyebrow mb-4 block text-gold">
+            <span className="section-eyebrow mb-4 block" style={{ color: "#00B4D8" }}>
               {t("OUR VALUES", "قيمنا")}
             </span>
-            <h2 className="font-display text-4xl sm:text-5xl text-[#0B1120] mb-4">
+            <h2 className="font-display text-4xl sm:text-5xl text-[#0F2A4A] mb-4">
               {t("We Live Our Values, Every Day.", "نعيش قيمنا، كل يوم.")}
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">
@@ -204,7 +194,6 @@ export default function About() {
             </p>
           </div>
 
-          {/* Value Tab Navigation */}
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             {values.map((val, i) => (
               <button
@@ -212,7 +201,7 @@ export default function About() {
                 onClick={() => setActiveValue(i)}
                 className={`px-5 py-3 rounded-full text-sm font-medium transition-all ${
                   activeValue === i
-                    ? "bg-gold text-[#0B1120] shadow-lg"
+                    ? "bg-[#D4622B] text-white shadow-lg"
                     : "bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700"
                 }`}
               >
@@ -221,24 +210,21 @@ export default function About() {
             ))}
           </div>
 
-          {/* Active Value Display — Full Width with Image */}
-          <div className="bg-[#0B1120] rounded-2xl overflow-hidden">
+          <div className="bg-[#0F2A4A] rounded-2xl overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-              {/* Text Side */}
               <div className="p-10 md:p-16 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-6">
-                  <activeVal.icon className="w-8 h-8 text-gold" />
-                  <span className="text-gold/50 text-sm font-mono">0{activeValue + 1}</span>
+                  <activeVal.icon className="w-8 h-8 text-[#D4622B]" />
+                  <span className="text-[#00B4D8] text-sm font-mono">0{activeValue + 1}</span>
                 </div>
                 <h3 className="font-display text-3xl md:text-4xl text-white mb-6 flex items-center gap-3">
                   {activeVal.title}
-                  <ChevronRight className="w-6 h-6 text-gold" />
+                  <ChevronRight className="w-6 h-6 text-[#D4622B]" />
                 </h3>
                 <p className="text-white/60 text-lg leading-relaxed">
                   {activeVal.desc}
                 </p>
               </div>
-              {/* Image Side */}
               <div className="aspect-[4/3] lg:aspect-auto">
                 <img
                   src={activeVal.img}
@@ -252,7 +238,7 @@ export default function About() {
       </section>
 
       {/* ═══════════════════ WHY MENA FIRST ═══════════════════ */}
-      <section className="py-24 md:py-32 bg-[#0B1120]">
+      <section className="py-24 md:py-32 bg-[#0F2A4A]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <span className="section-eyebrow mb-4 block">
@@ -263,8 +249,8 @@ export default function About() {
             </h2>
             <p className="text-white/50 text-lg leading-relaxed">
               {t(
-                "There is no major industrial VR training provider offering native Arabic content specialized in oil & gas. This gap is SIMUL XR's reason for existing.",
-                "لا يوجد أي مزود رئيسي لتدريب VR الصناعي يقدم محتوى عربياً أصلياً متخصصاً في النفط والغاز. هذا الفراغ هو وجود SIMUL XR."
+                "There is no major industrial XR training provider offering native Arabic content specialized in oil & gas. This gap is SIMUL XR's reason for existing.",
+                "لا يوجد أي مزود رئيسي لتدريب XR الصناعي يقدم محتوى عربياً أصلياً متخصصاً في النفط والغاز. هذا الفراغ هو وجود SIMUL XR."
               )}
             </p>
           </div>
@@ -274,7 +260,7 @@ export default function About() {
               { title: t("Saudi Vision 2030", "رؤية السعودية 2030"), desc: t("Billions in industrial infrastructure + millions of workers needing training", "مليارات الدولارات في البنية التحتية الصناعية + ملايين العمال يحتاجون تدريباً") },
               { title: t("ADNOC Expansion — UAE", "توسع ADNOC — الإمارات"), desc: t("Massive downstream plans requiring rapidly trained workforce at scale", "خطط downstream ضخمة تتطلب كوادر مدرّبة بسرعة وعلى نطاق واسع") },
               { title: t("Egypt LNG Development", "تطوير LNG في مصر"), desc: t("New facilities needing custom simulation for their actual environments", "منشآت جديدة تحتاج محاكاة مخصصة لبيئاتها الفعلية") },
-              { title: t("No Arabic in Industrial VR", "غياب العربية في VR الصناعي"), desc: t("Neither Pixaera, 3T, TSC, nor Luminous offer real Arabic content", "لا Pixaera ولا 3T ولا TSC ولا Luminous يقدم عربياً فعلياً") },
+              { title: t("No Arabic in Industrial XR", "غياب العربية في XR الصناعي"), desc: t("Neither Pixaera, 3T, TSC, nor Luminous offer real Arabic content", "لا Pixaera ولا 3T ولا TSC ولا Luminous يقدم عربياً فعلياً") },
               { title: t("Gulf Procurement Culture", "ثقافة المشتريات الخليجية"), desc: t("We understand approval cycles, relationships, and local challenges", "نفهم دورات الموافقة والعلاقات والتحديات المحلية") },
               { title: t("MENA Expansion Plan", "خطة التوسع في MENA"), desc: t("Egypt Phase 1 → UAE & KSA Phase 2 → Qatar, Kuwait, Oman Phase 3", "مصر المرحلة 1 → الإمارات وKSA المرحلة 2 → قطر، الكويت، عُمان المرحلة 3") },
             ].map((item, i) => (
@@ -291,10 +277,10 @@ export default function About() {
       <section className="py-24 md:py-32 bg-white">
         <div className="container">
           <div className="text-center mb-16">
-            <span className="section-eyebrow mb-4 block text-gold">
+            <span className="section-eyebrow mb-4 block" style={{ color: "#00B4D8" }}>
               {t("THE TEAM", "الفريق")}
             </span>
-            <h2 className="font-display text-4xl sm:text-5xl text-[#0B1120]">
+            <h2 className="font-display text-4xl sm:text-5xl text-[#0F2A4A]">
               {t("Built by Industry Experts", "بناه خبراء الصناعة")}
             </h2>
           </div>
@@ -324,10 +310,10 @@ export default function About() {
               },
             ].map((member, i) => (
               <div key={i} className="card-light rounded-lg p-8 text-center">
-                <div className="w-16 h-16 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center mx-auto mb-6">
-                  <span className="font-display text-xl text-gold">0{i + 1}</span>
+                <div className="w-16 h-16 rounded-full bg-[#D4622B]/10 border border-[#D4622B]/20 flex items-center justify-center mx-auto mb-6">
+                  <span className="font-display text-xl text-[#D4622B]">0{i + 1}</span>
                 </div>
-                <h4 className="font-display text-lg text-[#0B1120] mb-3">{member.role}</h4>
+                <h4 className="font-display text-lg text-[#0F2A4A] mb-3">{member.role}</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">{member.desc}</p>
               </div>
             ))}
@@ -336,7 +322,7 @@ export default function About() {
       </section>
 
       {/* ═══════════════════ TECHNOLOGY STACK ═══════════════════ */}
-      <section className="py-20 bg-[#0B1120]">
+      <section className="py-20 bg-[#0F2A4A]">
         <div className="container">
           <div className="text-center mb-12">
             <span className="section-eyebrow mb-4 block">
@@ -368,10 +354,10 @@ export default function About() {
       <section className="py-20 bg-white">
         <div className="container">
           <div className="text-center mb-12">
-            <span className="section-eyebrow mb-4 block text-gold">
+            <span className="section-eyebrow mb-4 block" style={{ color: "#00B4D8" }}>
               {t("OUR OFFICES", "مكاتبنا")}
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl text-[#0B1120]">
+            <h2 className="font-display text-3xl sm:text-4xl text-[#0F2A4A]">
               {t("Three Offices Across MENA", "ثلاثة مكاتب في MENA")}
             </h2>
           </div>
@@ -382,8 +368,8 @@ export default function About() {
               { city: t("Riyadh — KSA", "الرياض — السعودية"), address: t("Riyadh, Kingdom of Saudi Arabia", "الرياض، المملكة العربية السعودية") },
             ].map((office, i) => (
               <div key={i} className="card-light rounded-lg p-6 text-center">
-                <MapPin className="w-6 h-6 text-gold mx-auto mb-3" />
-                <h4 className="font-display text-lg text-[#0B1120] mb-2">{office.city}</h4>
+                <MapPin className="w-6 h-6 text-[#D4622B] mx-auto mb-3" />
+                <h4 className="font-display text-lg text-[#0F2A4A] mb-2">{office.city}</h4>
                 <p className="text-gray-400 text-sm">{office.address}</p>
               </div>
             ))}
@@ -392,18 +378,18 @@ export default function About() {
       </section>
 
       {/* ═══════════════════ CTA ═══════════════════ */}
-      <section className="py-24 md:py-32 bg-gold">
+      <section className="py-24 md:py-32 bg-[#D4622B]">
         <div className="container text-center">
-          <h2 className="font-display text-4xl sm:text-5xl text-[#0B1120] mb-6">
+          <h2 className="font-display text-4xl sm:text-5xl text-white mb-6">
             {t("Ready to Transform Your Training?", "مستعد لتحويل تدريبك؟")}
           </h2>
-          <p className="text-[#0B1120]/70 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
+          <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
             {t(
               "Let's discuss how SIMUL XR can build the right simulation for your facility — in Arabic, from your actual data.",
               "لنناقش كيف يمكن لـ SIMUL XR بناء المحاكاة المناسبة لمنشأتك — بالعربية، من بياناتك الفعلية."
             )}
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#0B1120] text-white font-medium hover:bg-[#0B1120]/90 transition-all hover:-translate-y-0.5">
+          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#D4622B] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
             {t("Get in Touch", "تواصل معنا")}
             <ArrowRight className="w-4 h-4" />
           </Link>

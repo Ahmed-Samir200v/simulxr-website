@@ -41,7 +41,7 @@ export default function CaseStudies() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-40 pb-24 bg-[#0B1120] overflow-hidden">
+      <section className="relative pt-40 pb-24 bg-[#0F2A4A] overflow-hidden">
         <div className="container relative z-10">
           <span className="section-eyebrow mb-4 block animate-fadeUp">
             {t("CASE STUDIES", "دراسات الحالة")}
@@ -64,13 +64,13 @@ export default function CaseStudies() {
           <div className="space-y-12">
             {cases.map((cs, i) => (
               <div key={i} className="card-light rounded-lg p-8 md:p-12">
-                <span className="text-gold text-xs font-medium tracking-wider uppercase">{cs.tag}</span>
-                <h2 className="font-display text-2xl md:text-3xl text-[#0B1120] mt-3 mb-4">{cs.title}</h2>
+                <span className="text-[#00B4D8] text-xs font-medium tracking-wider uppercase">{cs.tag}</span>
+                <h2 className="font-display text-2xl md:text-3xl text-[#0F2A4A] mt-3 mb-4">{cs.title}</h2>
                 <p className="text-gray-600 leading-relaxed mb-8 max-w-3xl">{cs.desc}</p>
                 <div className="grid grid-cols-3 gap-6 border-t border-gray-100 pt-8">
                   {cs.metrics.map((m, j) => (
                     <div key={j}>
-                      <div className="font-display text-3xl md:text-4xl text-gold mb-1">{m.value}</div>
+                      <div className="font-display text-3xl md:text-4xl text-[#D4622B] mb-1">{m.value}</div>
                       <p className="text-gray-500 text-sm">{m.label}</p>
                     </div>
                   ))}
@@ -82,10 +82,10 @@ export default function CaseStudies() {
       </section>
 
       {/* Testimonial */}
-      <section className="py-24 bg-[#0B1120]">
+      <section className="py-24 bg-[#0F2A4A]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="text-gold text-5xl font-display mb-6">"</div>
+            <div className="text-[#D4622B] text-5xl font-display mb-6">"</div>
             <p className="font-display text-xl md:text-2xl text-white italic leading-relaxed mb-8">
               {t(
                 "SimulXR reduced our incident rate by 40% in the first year. The facility-specific training is exactly what we needed — not generic scenarios, but our actual plant.",
@@ -101,18 +101,18 @@ export default function CaseStudies() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gold">
+      <section className="py-24 bg-[#D4622B]">
         <div className="container text-center">
-          <h2 className="font-display text-4xl sm:text-5xl text-[#0B1120] mb-6">
+          <h2 className="font-display text-4xl sm:text-5xl text-white mb-6">
             {t("Your Facility Could Be Next", "منشأتك قد تكون التالية")}
           </h2>
-          <p className="text-[#0B1120]/70 max-w-xl mx-auto mb-10 text-lg">
+          <p className="text-white/80 max-w-xl mx-auto mb-10 text-lg">
             {t(
               "Start with a 90-day pilot and see the results for yourself.",
               "ابدأ بتجربة 90 يوماً وشاهد النتائج بنفسك."
             )}
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#0B1120] text-white font-medium hover:bg-[#0B1120]/90 transition-all hover:-translate-y-0.5">
+          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#D4622B] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
             {t("Request Pilot Package", "اطلب باقة الـ Pilot")}
             <ArrowRight className="w-4 h-4" />
           </Link>
