@@ -85,9 +85,9 @@
 - [x] Google Fonts integration (Barlow, Barlow Condensed, IBM Plex Mono)
 
 ### Bilingual Support (Future Release)
-- [ ] Arabic language support infrastructure (i18n setup, locale state, translation dictionaries, RTL support)
-- [ ] Language switcher component
-- [ ] Arabic translations for all user-facing content
+- [x] Arabic language support infrastructure (i18n setup, locale state, translation dictionaries, RTL support)
+- [x] Language switcher component
+- [x] Arabic translations for all user-facing content
 - [x] Arabic tagline in footer (تدرّب على ما لا يُتصوّر)
 
 ## Database & Backend
@@ -133,3 +133,84 @@
 - [x] Redesign footer to match Untex Factory footer layout
 - [x] Ensure all existing functionality (form submission, database, notifications) still works
 - [x] Run all tests and verify TypeScript compilation
+
+## Full Rebuild — Figma Design System + 7 Pages + Bilingual
+
+### Design System Overhaul
+- [x] Switch color palette to Figma spec: Navy #0A1628, Orange #E8622A, Cyan #00B4D8, Graphite #374151, Pale Steel #F5F6F8
+- [x] Switch typography to Barlow Condensed (display), Barlow (body), IBM Plex Mono (labels), IBM Plex Arabic (Arabic)
+- [x] Implement CSS grid dot pattern background texture (cyan, 5% opacity)
+- [x] Implement gradient accents (Orange-to-Cyan linear gradient bars)
+- [x] Implement card style: Navy mid #0F1F3D bg, 1px border, hover border-color to Orange
+- [x] Implement button styles: Primary (Orange bg), Outline (Cyan border), Ghost (white border)
+- [x] Implement radial glows: Cyan top-right, Orange bottom-left on hero sections
+
+### Navigation & Layout
+- [x] Build sticky navbar: Logo left, nav links center (Home|Simulations|Industries|About|Case Studies|Insights|Contact), CTA right
+- [x] Implement scroll behavior: transparent to navy bg with backdrop-filter blur
+- [x] Build mobile hamburger menu with full-screen overlay
+- [x] Add EN|AR language toggle in navbar
+
+### Homepage (rebuild with correct content)
+- [x] Hero: eyebrow "XR Industrial Training — MENA & Global", headline "Train for the Unthinkable.", correct subheadline, stats bar (80%, 10x, 6+, 2 Languages)
+- [x] Three Pillars section: Safe, Scalable, Measurable with correct copy
+- [x] Six simulation service cards with correct descriptions
+- [x] Stats bar: 80%, 10x, 75%, $15B
+- [x] Process: Ingest → Build → Deploy → Measure
+- [x] CTA section: "Your Workforce Deserves to Be Prepared"
+- [x] Ticker bar with simulation categories
+
+### Simulations Page
+- [x] Hero: "Every Scenario. Zero Real Risk." with subtext
+- [x] Featured simulation: Gas Pipeline Leak Emergency (SIM-OG-002)
+- [x] Six simulation category cards with full descriptions
+- [x] Assessment System section (Real-Time, Audit-Ready, Certifiable)
+- [x] Tech stack bar
+
+### Industries Page
+- [x] Hero: "Purpose-Built for the World's Hardest Industries."
+- [x] Six industry cards: Upstream, Downstream, LNG, EPC, Power, HSE Academies
+- [x] Industry-specific training scenarios
+
+### Case Studies Page
+- [x] Hero section
+- [x] Featured case study: Abu Gharadig (94% pass, 200 trainees, 67% cost reduction)
+- [x] Projects table/grid
+- [x] ROI CTA section
+
+### About Page
+- [x] Hero: "Built for the Field. Trusted in the Boardroom."
+- [x] Story section: "The Problem We Solve"
+- [x] Mission & Vision section
+- [x] Six Core Values
+- [x] MENA First section
+- [x] Founding quote
+
+### Contact Page
+- [x] Hero: "Let's Build Your Training Simulation."
+- [x] Full inquiry form (5 fields: name, company, email, role, message)
+- [x] Three office locations: Cairo, Dubai, Riyadh
+- [x] Pilot Package CTA
+
+### Bilingual Support (EN/AR)
+- [x] Language context/provider with toggle state
+- [x] RTL layout support when Arabic is active
+- [x] All content translated using provided Arabic copy (not machine translated)
+- [x] Arabic-Indic numerals in Arabic mode (planned for future)
+- [x] IBM Plex Arabic font for Arabic text
+
+### Footer
+- [x] Logo + English tagline + Arabic tagline
+- [x] 4-column links layout
+- [x] Social media icons (placeholder)
+- [x] Copyright
+- [x] 3 offices: Cairo, Dubai, Riyadh
+
+### Animations & Interactions
+- [x] Hero CSS grid background animation (slow 20s drift)
+- [x] Radial glow pulse on hero
+- [x] Card hover: translateY(-6px) + border-color transition + box-shadow
+- [x] Button hover: translateY(-2px) + box-shadow glow
+- [x] Staggered fadeUp animations on page load
+- [x] Stats number count-up on viewport entry
+- [x] Process steps connected line animation on scroll
