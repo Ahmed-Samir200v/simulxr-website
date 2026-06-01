@@ -21,7 +21,7 @@ export default function Navbar() {
 
   const navLinks = [
     { label: t("Home", "الرئيسية"), href: "/" },
-    { label: t("Simulations", "المحاكاة"), href: "/simulations" },
+    { label: t("Services", "خدماتنا"), href: "/services" },
     { label: t("Industries", "القطاعات"), href: "/industries" },
     { label: t("About", "من نحن"), href: "/about" },
     { label: t("Case Studies", "دراسات الحالة"), href: "/case-studies" },

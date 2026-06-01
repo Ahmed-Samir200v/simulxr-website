@@ -26,7 +26,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold text-sm mb-5 tracking-wide uppercase">{t("Platform", "المنصة")}</h4>
             <ul className="space-y-3 text-sm text-white/50">
-              <li><Link href="/simulations" className="hover:text-gold transition-colors">{t("Simulations", "المحاكاة")}</Link></li>
+              <li><Link href="/services" className="hover:text-gold transition-colors">{t("Services", "خدماتنا")}</Link></li>
               <li><Link href="/industries" className="hover:text-gold transition-colors">{t("Industries", "القطاعات")}</Link></li>
               <li><Link href="/case-studies" className="hover:text-gold transition-colors">{t("Case Studies", "دراسات الحالة")}</Link></li>
               <li><Link href="/insights" className="hover:text-gold transition-colors">{t("Insights", "المقالات")}</Link></li>

@@ -7,7 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import Simulations from "./pages/Simulations";
+import Services from "./pages/Services";
 import Industries from "./pages/Industries";
 import About from "./pages/About";
 import CaseStudies from "./pages/CaseStudies";
@@ -19,7 +19,7 @@ function Router() {
     <Layout>
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/simulations" component={Simulations} />
+        <Route path="/services" component={Services} />
         <Route path="/industries" component={Industries} />
         <Route path="/about" component={About} />
         <Route path="/case-studies" component={CaseStudies} />

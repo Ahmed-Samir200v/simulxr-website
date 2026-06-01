@@ -214,3 +214,37 @@
 - [x] Staggered fadeUp animations on page load
 - [x] Stats number count-up on viewport entry
 - [x] Process steps connected line animation on scroll
+
+## Page Rebuild — New Document Content (June 2026)
+
+### Home Page Rebuild
+- [x] Hero: H1 "قبل أن يحدث." / "Before It Happens.", eyebrow, stats bar (80%, 10×, 4, 2)
+- [x] Three Pillars: Safe, Scalable, Measurable with new copy
+- [x] Services Overview: 4 services (Equipment, HSE, VCR, Drill) with correct descriptions
+- [x] How It Works: 4 steps (Ingest, Build, Customize, Deploy & Measure)
+- [x] Why SIMUL XR: Differentiation section
+- [x] Stats Bar: 80%, 10×, 75%, $15B
+- [x] Testimonials: 3 testimonials
+- [x] CTA: "فريقك يستحق أن يكون مستعداً"
+
+### Services Page Rebuild
+- [x] Hero: "محاكاة صناعية حقيقية. لمنشأتك بالتحديد."
+- [x] Delivery Models: Standard vs Facility-Specific comparison
+- [x] Service 01: Equipment & Machinery Simulation (7 equipment types)
+- [x] Service 02: HSE Safety Scenarios (8 scenarios)
+- [x] Service 03: Virtual Control Room (6 scenarios)
+- [x] Service 04: Drill & Well Control (8 scenarios, comparison table)
+- [x] Platform Features section
+- [x] Compliance Standards section
+- [x] CTA: "من أين تبدأ؟"
+
+### About Us Page Rebuild
+- [x] Hero: "مصمم للميدان. موثوق في مجلس الإدارة."
+- [x] Problem vs Solution table
+- [x] Mission & Vision section
+- [x] Core Values: 3T Global-style tabbed section with 6 values
+- [x] Why MENA First section with market opportunity
+- [x] Team section
+- [x] Milestones/Timeline (Phase 1-3) (included in MENA expansion plan)
+- [x] Technology Stack
+- [x] Compliance Standards

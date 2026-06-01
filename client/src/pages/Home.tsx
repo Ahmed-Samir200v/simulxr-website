@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ArrowRight, Shield, Zap, TrendingUp, Quote } from "lucide-react";
+import { ArrowRight, Shield, Zap, TrendingUp, Quote, CheckCircle2, XCircle } from "lucide-react";
 import { Link } from "wouter";
 
 /* ─── Image URLs (webdev-static-assets) ─── */
@@ -12,8 +12,6 @@ const SIM_IMAGES = {
   equipment: "https://d2xsxph8kpxj0f.cloudfront.net/310519663048751930/DC4FNTfcHyvuxQWATJPrwg/sim-equipment-jXJpjtz2kpYaq7vK9oas3b.webp",
   confined: "https://d2xsxph8kpxj0f.cloudfront.net/310519663048751930/DC4FNTfcHyvuxQWATJPrwg/sim-confined-Ux2cYqBEqiUCxLB8cvH397.webp",
   onboarding: "https://d2xsxph8kpxj0f.cloudfront.net/310519663048751930/DC4FNTfcHyvuxQWATJPrwg/sim-onboarding-fHPPuvivUtFDGH7M2vAvm9.webp",
-  maintenance: "https://d2xsxph8kpxj0f.cloudfront.net/310519663048751930/DC4FNTfcHyvuxQWATJPrwg/sim-maintenance-AqoA7zPcBcpttopqyKJAKU.webp",
-  loto: "https://d2xsxph8kpxj0f.cloudfront.net/310519663048751930/DC4FNTfcHyvuxQWATJPrwg/sim-loto-5LrYtsPXEMPjJPyZLYC3Md.webp",
 };
 
 /* ─── Animated Counter Hook ─── */
@@ -61,245 +59,59 @@ export default function Home() {
     <>
       {/* ═══════════════════ HERO SECTION ═══════════════════ */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background image */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${HERO_BG})` }} />
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0B1120]/95 via-[#0B1120]/75 to-[#0B1120]/40" />
-        {/* Bottom gradient */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0B1120] to-transparent" />
 
         <div className="container relative z-10 pt-32 pb-20">
           <div className="max-w-3xl">
-            {/* Eyebrow - gold italic */}
             <p className="section-eyebrow mb-6 animate-fadeUp">
-              {t("EXCELLENCE IN EVERY SIMULATION", "التميز في كل محاكاة")}
+              {t("XR INDUSTRIAL TRAINING — EGYPT | GULF | MENA", "محاكاة XR الصناعية — مصر | الخليج | MENA")}
             </p>
 
-            {/* Headline - large serif */}
-            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.05] mb-8 animate-fadeUp-delay-1 text-white">
-              {t("Innovative training solutions for industries", "حلول تدريبية مبتكرة للصناعات")}
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.05] mb-6 animate-fadeUp-delay-1 text-white">
+              {t("Before It Happens", "قبل أن يحدث")}<span className="text-gold">.</span>
             </h1>
 
-            {/* CTA - white pill with gold arrow */}
+            <p className="text-white/60 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl animate-fadeUp-delay-2">
+              {t(
+                "Industrial VR simulations that turn oil & gas safety procedures into real muscle memory — before facing real danger on site.",
+                "محاكاة واقع افتراضي صناعية تُحوّل إجراءات السلامة ومعدات النفط والغاز إلى ذاكرة عضلية حقيقية — قبل مواجهة الخطر الحقيقي."
+              )}
+            </p>
+
             <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fadeUp-delay-2">
-              <Link href="/simulations" className="btn-pill">
-                {t("Our Simulations", "محاكاتنا")}
+              <Link href="/contact" className="btn-pill">
+                {t("Request a Free Demo", "اطلب عرضاً تجريبياً")}
                 <span className="w-8 h-8 rounded-full bg-gold flex items-center justify-center">
                   <ArrowRight className="w-4 h-4 text-[#0B1120]" />
                 </span>
               </Link>
-            </div>
-
-            {/* Social proof - avatar stack + gold text */}
-            <div className="flex items-center gap-4 animate-fadeUp-delay-3">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-10 h-10 rounded-full bg-gold/20 border-2 border-gold/40 flex items-center justify-center text-gold text-xs font-bold">
-                    {String.fromCharCode(64 + i)}
-                  </div>
-                ))}
-                <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-[#0B1120] text-xs font-bold">
-                  +
-                </div>
-              </div>
-              <p className="text-gold text-sm font-medium">
-                {t("More than 3000+ trained workers", "أكثر من 3000+ عامل مدرّب")}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════ WHO WE ARE (Light Section) ═══════════════════ */}
-      <section className="py-24 md:py-32 bg-white">
-        <div className="container">
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-            <span className="text-xs text-gray-400 tracking-[0.2em] uppercase">
-              {t("GLOBAL LEADERS IN INDUSTRIAL XR TRAINING", "رواد عالميون في تدريب XR الصناعي")}
-            </span>
-            <span className="section-tag">[ {t("WHO WE ARE", "من نحن")} ]</span>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left: Images */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-lg overflow-hidden">
-                <img src={SIM_IMAGES.emergency} alt="VR Training" className="w-full h-full object-cover" />
-              </div>
-              {/* Stats overlay */}
-              <div className="absolute -bottom-6 -right-4 bg-white shadow-xl rounded-lg p-6 border border-gray-100">
-                <div className="font-display text-4xl text-[#0B1120]">30</div>
-                <p className="text-gray-500 text-sm">{t("Years of experience", "سنة خبرة")}</p>
-              </div>
-            </div>
-
-            {/* Right: Text */}
-            <div>
-              <h2 className="font-display text-4xl sm:text-5xl text-[#0B1120] mb-6">
-                {t("About us", "من نحن")}<span className="text-gold">.</span>
-              </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                {t(
-                  "SimulXR builds immersive VR simulations that turn oil & gas SOPs into life-saving muscle memory. We convert your facility's actual CAD files and procedures into photorealistic, interactive training environments — before workers face real emergencies on site.",
-                  "تبني SimulXR محاكاة واقع افتراضي غامرة تحوّل إجراءات التشغيل القياسية لقطاع النفط والغاز إلى ذاكرة عضلية منقذة للأرواح. نحوّل ملفات CAD الفعلية لمنشأتك وإجراءاتها إلى بيئات تدريب واقعية وتفاعلية."
-                )}
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  t("Facility-specific, not generic templates", "مخصص للمنشأة، وليس قوالب عامة"),
-                  t("Arabic-first interface for MENA workforce", "واجهة عربية أولاً للقوى العاملة في الشرق الأوسط"),
-                  t("Real-time competency dashboards", "لوحات تحكم كفاءة في الوقت الفعلي"),
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-gray-700">
-                    <span className="w-2 h-2 rounded-full bg-gold" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/about" className="btn-gold">
-                {t("Learn More", "اعرف المزيد")}
+              <Link href="/services" className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/20 text-white text-sm font-medium hover:border-gold/50 hover:text-gold transition-all">
+                {t("Explore Our Services", "استكشف خدماتنا")}
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ═══════════════════ SERVICES / SIMULATIONS (Dark Section) ═══════════════════ */}
-      <section className="py-24 md:py-32 bg-[#0B1120]">
-        <div className="container">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-            <div>
-              <span className="section-eyebrow mb-4 block">
-                {t("WHAT WE OFFER", "ما نقدمه")}
-              </span>
-              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
-                {t("Services", "خدماتنا")}<span className="text-gold">.</span>
-              </h2>
-            </div>
-            <Link href="/simulations" className="btn-outline-dark">
-              {t("View All", "عرض الكل")}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Hero Stats Bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-fadeUp-delay-3">
             {[
-              { title: t("Emergency Response", "الاستجابة للطوارئ"), img: SIM_IMAGES.emergency },
-              { title: t("Equipment Operation", "تشغيل المعدات"), img: SIM_IMAGES.equipment },
-              { title: t("Confined Space Entry", "الدخول للفراغات المغلقة"), img: SIM_IMAGES.confined },
-              { title: t("New Hire Onboarding", "تأهيل الموظفين الجدد"), img: SIM_IMAGES.onboarding },
-              { title: t("Maintenance Procedures", "إجراءات الصيانة"), img: SIM_IMAGES.maintenance },
-              { title: t("LOTO Procedures", "إجراءات LOTO"), img: SIM_IMAGES.loto },
-            ].map((sim, i) => (
-              <div key={i} className="card-dark rounded-lg overflow-hidden group cursor-pointer">
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img
-                    src={sim.img}
-                    alt={sim.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-6 flex items-center justify-between">
-                  <h3 className="font-display text-xl text-white group-hover:text-gold transition-colors">
-                    {sim.title}
-                  </h3>
-                  <span className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-gold group-hover:bg-gold/10 transition-all">
-                    <ArrowRight className="w-4 h-4 text-white/60 group-hover:text-gold transition-colors" />
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════ STATS BAR ═══════════════════ */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { ref: stat1.ref, count: stat1.count, suffix: "%", label: t("Accidents from human error", "حوادث ناتجة عن خطأ بشري"), gold: true },
-              { ref: stat2.ref, count: stat2.count, suffix: "x", label: t("Cost reduction vs. drills", "تخفيض التكلفة مقارنة بالتدريبات"), gold: false },
-              { ref: stat3.ref, count: stat3.count, suffix: "%", label: t("Higher retention rate", "معدل احتفاظ أعلى"), gold: false },
-              { ref: stat4.ref, count: stat4.count, prefix: "$", suffix: "B", label: t("Annual training spend", "إنفاق سنوي على التدريب"), gold: true },
+              { value: "80%", label: t("Industrial accidents caused by human error", "من الحوادث الصناعية سببها الخطأ البشري"), source: "IOGP" },
+              { value: "10×", label: t("Cost reduction vs. physical drills", "توفير في التكلفة مقارنة بالتدريبات الميدانية"), source: "Industry" },
+              { value: "4", label: t("Integrated digital services", "خدمات رقمية متكاملة تحت سقف واحد"), source: "SIMUL XR" },
+              { value: "2", label: t("Languages — Arabic & English", "لغة — عربي وإنجليزي"), source: "SIMUL XR" },
             ].map((stat, i) => (
-              <div key={i} ref={stat.ref} className={`p-8 rounded-lg text-center ${stat.gold ? "stats-gold" : "stats-dark"}`}>
-                <div className={`font-display text-4xl md:text-5xl mb-3 ${stat.gold ? "text-[#0B1120]" : "text-gold"}`}>
-                  {stat.prefix || ""}{stat.count}{stat.suffix}
-                </div>
-                <p className={`text-sm leading-snug ${stat.gold ? "text-[#0B1120]/70" : "text-white/50"}`}>{stat.label}</p>
+              <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-center">
+                <div className="font-display text-2xl md:text-3xl text-gold mb-1">{stat.value}</div>
+                <p className="text-white/50 text-xs leading-tight">{stat.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════ MARQUEE / TICKER ═══════════════════ */}
-      <div className="py-6 bg-gray-50 overflow-hidden border-y border-gray-200">
-        <div className="flex gap-16 animate-ticker whitespace-nowrap">
-          {[
-            t("Emergency Response", "الاستجابة للطوارئ"),
-            t("Oil & Gas", "النفط والغاز"),
-            t("Materials", "المواد"),
-            t("Automotive", "السيارات"),
-            t("Power & Energy", "الطاقة والكهرباء"),
-            t("HSE Compliance", "الامتثال لـ HSE"),
-            t("LOTO Procedures", "إجراءات LOTO"),
-            t("Emergency Response", "الاستجابة للطوارئ"),
-            t("Oil & Gas", "النفط والغاز"),
-            t("Materials", "المواد"),
-            t("Automotive", "السيارات"),
-            t("Power & Energy", "الطاقة والكهرباء"),
-          ].map((item, i) => (
-            <span key={i} className="text-gray-300 text-3xl md:text-4xl font-light tracking-wide" style={{ fontFamily: "'DM Serif Display', serif" }}>
-              {item}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* ═══════════════════ WORK PROCESS (Dark Section) ═══════════════════ */}
-      <section className="py-24 md:py-32 relative overflow-hidden bg-[#0B1120]">
-        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${PROCESS_BG})` }} />
-        <div className="absolute inset-0 bg-[#0B1120]/80" />
-
-        <div className="container relative z-10">
-          <div className="text-center mb-16">
-            <span className="section-eyebrow mb-4 block">
-              {t("HOW IT WORKS", "كيف يعمل")}
-            </span>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
-              {t("Work process", "مراحل العمل")}<span className="text-gold">.</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            {/* Connecting line */}
-            <div className="absolute top-14 left-[12%] right-[12%] h-px bg-gradient-to-r from-gold/30 via-white/10 to-gold/30 hidden md:block" />
-
-            {[
-              { num: "01", title: t("Ingest", "الاستيعاب"), desc: t("We receive your CAD/BIM files and SOP documents. Your real facility.", "نستقبل ملفات CAD/BIM وإجراءات SOP. منشأتك الحقيقية.") },
-              { num: "02", title: t("Build", "البناء"), desc: t("Our 3D team converts designs into photorealistic VR environments.", "فريقنا يحول التصاميم إلى بيئات VR واقعية.") },
-              { num: "03", title: t("Deploy", "النشر"), desc: t("Training goes live on Meta Quest — on-site or remote.", "يبدأ التدريب على Meta Quest — في الموقع أو عن بعد.") },
-              { num: "04", title: t("Measure", "القياس"), desc: t("Dashboards track performance and produce HSE audit reports.", "لوحات تحكم تتبع الأداء وتنتج تقارير تدقيق HSE.") },
-            ].map((step, i) => (
-              <div key={i} className="text-center relative z-10 group">
-                <div className="w-[4.5rem] h-[4.5rem] rounded-full border-2 border-gold/30 bg-[#0B1120] flex items-center justify-center mx-auto mb-6 group-hover:border-gold group-hover:bg-gold/10 transition-all duration-300">
-                  <span className="font-display text-xl text-gold">{step.num}</span>
-                </div>
-                <h3 className="font-display text-xl text-white mb-3 group-hover:text-gold transition-colors">
-                  {step.title}
-                </h3>
-                <p className="text-white/40 text-sm leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════ THREE PILLARS (Light Section) ═══════════════════ */}
+      {/* ═══════════════════ THREE PILLARS ═══════════════════ */}
       <section className="py-24 md:py-32 bg-white">
         <div className="container">
           <div className="text-center mb-16">
@@ -307,7 +119,7 @@ export default function Home() {
               {t("WHY SIMUL XR", "لماذا SIMUL XR")}
             </span>
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-[#0B1120] leading-tight">
-              {t("Our features", "مميزاتنا")}<span className="text-gold">.</span>
+              {t("Three Reasons SIMUL XR is the Industry Standard", "ثلاثة أسباب تجعل SIMUL XR الاختيار الأول")}
             </h2>
           </div>
 
@@ -317,24 +129,24 @@ export default function Home() {
                 icon: Shield,
                 title: t("Safe", "آمن"),
                 desc: t(
-                  "Practice high-risk scenarios in a controlled VR environment. No real-world hazards, no equipment damage, no downtime.",
-                  "تدرّب على سيناريوهات عالية الخطورة في بيئة VR محكومة. بدون مخاطر حقيقية."
+                  "Workers rehearse gas explosions, equipment failures and evacuations in a zero-risk virtual environment.",
+                  "يتدرب العمال على تسريبات الغاز والانفجارات وإجراءات الإخلاء في بيئة افتراضية خالية تماماً من المخاطر."
                 ),
               },
               {
                 icon: Zap,
                 title: t("Scalable", "قابل للتوسع"),
                 desc: t(
-                  "Deploy to 10 or 1,000 workers. Facility-specific training runs on Meta Quest headsets — no IT infrastructure required.",
-                  "انشر لـ 10 أو 1,000 عامل. بدون بنية تحتية IT مطلوبة."
+                  "One simulation trains hundreds simultaneously — on-site or remote — at a fraction of drill costs.",
+                  "محاكاة واحدة تُدرّب مئات المشغّلين في آنٍ واحد — في الموقع أو عن بُعد — بجزء من تكلفة التدريبات الميدانية."
                 ),
               },
               {
                 icon: TrendingUp,
                 title: t("Measurable", "قابل للقياس"),
                 desc: t(
-                  "Real-time dashboards track competency, flag knowledge gaps, and auto-generate HSE audit reports.",
-                  "لوحات تحكم في الوقت الفعلي تتبع الكفاءة وتنشئ تقارير تدقيق HSE تلقائياً."
+                  "Real-time competency scoring, performance tracking, and audit-ready HSE compliance reports.",
+                  "تقييم الكفاءة في الوقت الفعلي وتتبع الأداء وتقارير HSE جاهزة للتدقيق الرقابي."
                 ),
               },
             ].map((pillar, i) => {
@@ -353,35 +165,193 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════ TESTIMONIALS (Dark Section) ═══════════════════ */}
+      {/* ═══════════════════ SERVICES OVERVIEW (Dark Section) ═══════════════════ */}
       <section className="py-24 md:py-32 bg-[#0B1120]">
         <div className="container">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6">
+            <div>
+              <span className="section-eyebrow mb-4 block">
+                {t("OUR DIGITAL SERVICES", "خدماتنا الرقمية")}
+              </span>
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
+                {t("Four Specialized Digital Services for Oil & Gas", "أربع خدمات رقمية متخصصة لصناعة النفط والغاز")}
+              </h2>
+            </div>
+            <Link href="/services" className="btn-outline-dark">
+              {t("View All Services", "عرض كل الخدمات")}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <p className="text-white/50 max-w-3xl mb-12 text-lg">
+            {t(
+              "Complete XR solutions — standard simulations ready to deploy, or fully custom built from your facility data.",
+              "حلول XR متكاملة — بمحاكاة قياسية جاهزة أو مخصصة بالكامل من بيانات منشأتك الفعلية."
+            )}
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { num: "01", title: t("Equipment & Machinery Simulation", "محاكاة المعدات والآلات"), desc: t("Before your operator touches the first gas valve — we make them do it a hundred times virtually.", "قبل أن يلمس مشغّلك صمام الغاز الأول — نجعله يفعل ذلك مئة مرة في الافتراضي."), img: SIM_IMAGES.equipment },
+              { num: "02", title: t("HSE Safety Scenarios", "محاكاة سيناريوهات السلامة"), desc: t("Correct response requires muscle memory — built through repeated practice under realistic pressure.", "الاستجابة السليمة تحتاج ذاكرة عضلية — لا تتكوّن إلا بالممارسة المتكررة تحت ضغط واقعي."), img: SIM_IMAGES.emergency },
+              { num: "03", title: t("Virtual Control Room", "غرفة التحكم الافتراضية"), desc: t("A virtual replica of your control room — every screen, device, and SCADA/DCS system.", "نسخة افتراضية مطابقة لغرفة تحكمك — بكل الشاشات والأجهزة وأنظمة SCADA/DCS."), img: SIM_IMAGES.confined },
+              { num: "04", title: t("Drill & Well Control Simulation", "محاكاة الحفر وضبط الآبار"), desc: t("Same training outcome as DrillSIM at a fraction of the cost — on Meta Quest, in Arabic.", "نفس نتيجة التدريب بعُشر التكلفة — على Meta Quest، بالعربية."), img: SIM_IMAGES.onboarding },
+            ].map((service, i) => (
+              <Link key={i} href="/services" className="card-dark rounded-lg overflow-hidden group cursor-pointer flex flex-col md:flex-row">
+                <div className="md:w-2/5 aspect-[16/10] md:aspect-auto overflow-hidden">
+                  <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                </div>
+                <div className="p-6 md:p-8 flex flex-col justify-center md:w-3/5">
+                  <span className="text-gold/60 text-sm font-mono mb-2">{service.num}</span>
+                  <h3 className="font-display text-xl md:text-2xl text-white group-hover:text-gold transition-colors mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-white/40 text-sm leading-relaxed">{service.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════ HOW IT WORKS ═══════════════════ */}
+      <section className="py-24 md:py-32 relative overflow-hidden bg-[#0B1120]">
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: `url(${PROCESS_BG})` }} />
+        <div className="absolute inset-0 bg-[#0B1120]/80" />
+
+        <div className="container relative z-10">
           <div className="text-center mb-16">
             <span className="section-eyebrow mb-4 block">
-              {t("TESTIMONIALS", "شهادات العملاء")}
+              {t("HOW IT WORKS", "كيف نعمل")}
             </span>
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
-              {t("What our clients say", "ماذا يقول عملاؤنا")}<span className="text-gold">.</span>
+              {t("From CAD File to Live Simulation — 4 Steps", "من ملف CAD إلى محاكاة حية — 4 خطوات")}
             </h2>
           </div>
 
-          <div className="max-w-3xl mx-auto text-center">
-            <Quote className="w-12 h-12 text-gold/30 mx-auto mb-8" />
-            <p className="text-white/80 text-xl md:text-2xl leading-relaxed mb-10 italic font-display">
-              "{t(
-                "SimulXR reduced our incident rate by 40% in the first year. The facility-specific training is exactly what we needed.",
-                "خفضت SimulXR معدل الحوادث لدينا بنسبة 40% في السنة الأولى. التدريب المخصص للمنشأة هو بالضبط ما كنا نحتاجه."
-              )}"
-            </p>
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-gold/20 border-2 border-gold/40 flex items-center justify-center text-gold font-display text-lg">
-                A
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+            <div className="absolute top-14 left-[12%] right-[12%] h-px bg-gradient-to-r from-gold/30 via-white/10 to-gold/30 hidden md:block" />
+
+            {[
+              { num: "01", title: t("Ingest", "الاستقبال"), desc: t("We receive your CAD/BIM/Navisworks files and SOP documents. Your real facility — no templates.", "نستقبل ملفات CAD/BIM/Navisworks ووثائق SOP. منشأتك الحقيقية — لا قوالب جاهزة.") },
+              { num: "02", title: t("Build", "البناء"), desc: t("Our 3D team converts your designs into a photorealistic VR environment with your actual equipment and layout.", "فريقنا ثلاثي الأبعاد يُحوّل تصاميمك إلى بيئة VR فائقة الواقعية بمعداتك وتخطيطك الفعلي.") },
+              { num: "03", title: t("Customize", "التخصيص"), desc: t("We design scenarios based on your site SOPs, incident history, and training priorities.", "نُصمّم السيناريوهات على أساس SOPs موقعك وسجل الحوادث وأولويات التدريب.") },
+              { num: "04", title: t("Deploy & Measure", "النشر والقياس"), desc: t("Instant training on Meta Quest — on-site or remote. Real-time dashboards and HSE reports.", "تدريب فوري على Meta Quest — في الموقع أو عن بُعد. لوحات أداء فورية وتقارير HSE.") },
+            ].map((step, i) => (
+              <div key={i} className="text-center relative z-10 group">
+                <div className="w-[4.5rem] h-[4.5rem] rounded-full border-2 border-gold/30 bg-[#0B1120] flex items-center justify-center mx-auto mb-6 group-hover:border-gold group-hover:bg-gold/10 transition-all duration-300">
+                  <span className="font-display text-xl text-gold">{step.num}</span>
+                </div>
+                <h3 className="font-display text-xl text-white mb-3 group-hover:text-gold transition-colors">
+                  {step.title}
+                </h3>
+                <p className="text-white/40 text-sm leading-relaxed">{step.desc}</p>
               </div>
-              <div className="text-left">
-                <p className="text-white font-semibold">{t("Ahmed Al-Mansouri", "أحمد المنصوري")}</p>
-                <p className="text-white/40 text-sm">{t("HSE Director, Cairo Petroleum", "مدير HSE، القاهرة للبترول")}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════ DIFFERENTIATION TABLE ═══════════════════ */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="container">
+          <div className="text-center mb-16">
+            <span className="section-eyebrow mb-4 block text-gold">
+              {t("WHY SIMUL XR", "لماذا SIMUL XR")}
+            </span>
+            <h2 className="font-display text-4xl sm:text-5xl text-[#0B1120] leading-tight">
+              {t("How We Compare", "ما يميزنا")}
+            </h2>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              { us: t("Native Arabic content", "عربي أصلي — Native Arabic content"), them: t("No real Arabic in industrial VR", "لا أحد يقدم عربي فعلي في VR الصناعية") },
+              { us: t("Built from your actual facility CAD", "مبني من CAD منشأتك الفعلية"), them: t("Generic templates that don't reflect your site", "قوالب عامة لا تعكس موقعك") },
+              { us: t("4 integrated services under one roof", "4 خدمات متكاملة تحت سقف واحد"), them: t("Each competitor covers only a part", "كل منافس يغطي جزءاً فقط") },
+              { us: t("MENA team — understands procurement culture", "فريق MENA — يفهم ثقافة المشتريات"), them: t("Western companies far from the market", "شركات غربية بعيدة عن السوق") },
+              { us: t("Delivery in 2-14 weeks", "تسليم في 2-14 أسبوع"), them: t("3-18 months with competitors", "3-18 شهر عند المنافسين") },
+              { us: t("Affordable for mid-market", "سعر مناسب للـ mid-market"), them: t("$200K-$2M with TSC & 3T Drilling", "$200K-$2M عند TSC و3T Drilling") },
+            ].map((row, i) => (
+              <div key={i} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-start gap-3 bg-green-50 border border-green-100 rounded-lg p-4">
+                  <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5 shrink-0" />
+                  <span className="text-gray-700 text-sm">{row.us}</span>
+                </div>
+                <div className="flex items-start gap-3 bg-red-50 border border-red-100 rounded-lg p-4">
+                  <XCircle className="w-5 h-5 text-red-400 mt-0.5 shrink-0" />
+                  <span className="text-gray-500 text-sm">{row.them}</span>
+                </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════ STATS BAR ═══════════════════ */}
+      <section className="py-16 bg-[#0B1120]">
+        <div className="container">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { ref: stat1.ref, count: stat1.count, suffix: "%", label: t("Industrial accidents caused by human error", "من الحوادث الصناعية سببها الخطأ البشري") },
+              { ref: stat2.ref, count: stat2.count, suffix: "×", label: t("Lower cost vs. physical drills", "توفير في التكلفة مقارنة بالتدريبات الميدانية") },
+              { ref: stat3.ref, count: stat3.count, suffix: "%", label: t("Higher retention vs. classroom", "ارتفاع معدل الاستيعاب مقارنة بالتدريب التقليدي") },
+              { ref: stat4.ref, count: stat4.count, prefix: "$", suffix: "B", label: t("Annual O&G training spend globally", "الإنفاق العالمي السنوي على تدريب النفط والغاز") },
+            ].map((stat, i) => (
+              <div key={i} ref={stat.ref} className="text-center p-8">
+                <div className="font-display text-4xl md:text-5xl mb-3 text-gold">
+                  {stat.prefix || ""}{stat.count}{stat.suffix}
+                </div>
+                <p className="text-white/40 text-sm leading-snug">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════ TESTIMONIALS ═══════════════════ */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="container">
+          <div className="text-center mb-16">
+            <span className="section-eyebrow mb-4 block text-gold">
+              {t("TESTIMONIALS", "شهادات العملاء")}
+            </span>
+            <h2 className="font-display text-4xl sm:text-5xl text-[#0B1120] leading-tight">
+              {t("What Our Clients Say", "ماذا يقول عملاؤنا")}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                quote: t(
+                  "SIMUL XR transformed how we train for emergencies. Our operators arrive on site having survived the gas leak scenario in VR dozens of times.",
+                  "SIMUL XR غيّرت طريقة تدريبنا على الطوارئ. مشغّلونا الآن وصلوا إلى الموقع وقد عاشوا سيناريو تسريب الغاز في VR عشرات المرات."
+                ),
+                role: t("HSE Director — Upstream Operator, Egypt", "مدير HSE — مشغّل upstream، مصر"),
+              },
+              {
+                quote: t(
+                  "Arabic language support was the deciding factor for us. No other vendor offered this.",
+                  "دعم اللغة العربية كان القرار الفاصل بالنسبة لنا. لا يوجد مورد آخر قدّم هذا."
+                ),
+                role: t("L&D Director — Gulf Company", "مدير التدريب والتطوير — شركة خليجية"),
+              },
+              {
+                quote: t(
+                  "We trained 200 employees in 90 days at two-thirds of the traditional cost. The numbers speak for themselves.",
+                  "درّبنا 200 موظف في 90 يوماً بثلثي التكلفة التقليدية. الأرقام تتحدث عن نفسها."
+                ),
+                role: t("VP Operations — EPC Contractor, UAE", "نائب رئيس العمليات — مقاول EPC، الإمارات"),
+              },
+            ].map((testimonial, i) => (
+              <div key={i} className="card-light rounded-lg p-8">
+                <Quote className="w-8 h-8 text-gold/30 mb-4" />
+                <p className="text-gray-700 leading-relaxed mb-6 italic">
+                  "{testimonial.quote}"
+                </p>
+                <p className="text-gray-400 text-sm font-medium">{testimonial.role}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -390,12 +360,12 @@ export default function Home() {
       <section className="py-24 md:py-32 bg-gold relative overflow-hidden">
         <div className="container relative z-10 text-center">
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-[#0B1120] mb-6">
-            {t("Ready to transform safety training?", "مستعد لتحويل تدريب السلامة؟")}
+            {t("Your Workforce Deserves to Be Prepared.", "فريقك يستحق أن يكون مستعداً.")}
           </h2>
           <p className="text-[#0B1120]/70 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
             {t(
-              "Start with a 90-day pilot — one simulation, 50 trainees, full performance reporting. No commitment beyond the pilot.",
-              "ابدأ بتجربة 90 يوماً — محاكاة واحدة، 50 متدرباً، تقرير أداء كامل. بدون التزام بعد التجربة."
+              "Start with a 90-day pilot — one simulation, 50 trainees, full performance report. Zero operational disruption.",
+              "ابدأ بـ pilot مدته 90 يوماً — محاكاة واحدة، 50 متدرباً، تقرير أداء كامل. بدون تعطل للعمليات."
             )}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
