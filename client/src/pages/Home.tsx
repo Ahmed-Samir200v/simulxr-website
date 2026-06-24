@@ -1,8 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ArrowRight, Shield, Zap, TrendingUp, Quote, CheckCircle2, XCircle } from "lucide-react";
+import {
+  ArrowRight,
+  Layers3,
+  Quote,
+  Shield,
+  TrendingUp,
+  Zap,
+} from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "wouter";
 import { IMAGES } from "@/lib/assets";
+import { BRAND } from "@/config/branding";
 
 /* ─── Animated Counter Hook ─── */
 function useCountUp(end: number, duration = 2000) {
@@ -37,13 +46,216 @@ function useCountUp(end: number, duration = 2000) {
   return { count, ref };
 }
 
+const compareRows = [
+  {
+    feature: "Language & localization",
+    simulxr: "Native Arabic content",
+    competitors: "No real Arabic in industrial VR",
+  },
+  {
+    feature: "Facility fidelity",
+    simulxr: "Built from your actual facility CAD",
+    competitors: "Generic templates that don't reflect your site",
+  },
+  {
+    feature: "Delivery scope",
+    simulxr: "8 integrated solutions under one roof",
+    competitors: "Each competitor covers only a part",
+  },
+  {
+    feature: "Regional execution",
+    simulxr: "MENA team — understands procurement culture",
+    competitors: "Western companies far from the market",
+  },
+  {
+    feature: "Time to deployment",
+    simulxr: "Delivery in 2-14 weeks",
+    competitors: "3-18 months with competitors",
+  },
+  {
+    feature: "Commercial fit",
+    simulxr: "Affordable for mid-market",
+    competitors: "$200K-$2M with TSC & 3T Drilling",
+  },
+];
+
+function PositiveIndicator() {
+  const label = `${BRAND.name} includes this feature`;
+
+  return (
+    <svg
+      aria-label={label}
+      className="h-5 w-5 shrink-0"
+      fill="none"
+      role="img"
+      viewBox="0 0 24 24"
+    >
+      <title>{label}</title>
+      <path d="M12 3v18M3 12h18" stroke="#00B4D8" strokeOpacity="0.28" />
+      <path d="M7.5 12.2 10.6 15 16.8 8.5" stroke="#00B4D8" strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2.2" />
+      <rect height="18" rx="2" stroke="#00B4D8" strokeOpacity="0.9" width="18" x="3" y="3" />
+    </svg>
+  );
+}
+
+function NegativeIndicator() {
+  return (
+    <svg
+      aria-label="Competitors do not include this feature"
+      className="h-5 w-5 shrink-0 opacity-55"
+      fill="none"
+      role="img"
+      viewBox="0 0 24 24"
+    >
+      <title>Competitors do not include this feature</title>
+      <path d="M6 6h12v12H6z" stroke="#64748B" strokeOpacity="0.55" />
+      <path d="m8.25 8.25 7.5 7.5M15.75 8.25l-7.5 7.5" stroke="#64748B" strokeLinecap="square" strokeWidth="1.8" />
+    </svg>
+  );
+}
+
+function ComparisonSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${BRAND.name} vs Traditional Industrial VR`,
+    itemListElement: compareRows.map((row, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: row.feature,
+      description: `${BRAND.name}: ${row.simulxr}. Competitors: ${row.competitors}.`,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+function CompareSection() {
+  const { t } = useLanguage();
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <section
+      aria-labelledby="comparison-heading"
+      className="relative overflow-hidden bg-[#0F2A4A] py-24 md:py-32"
+    >
+      <ComparisonSchema />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(0,180,216,0.20),transparent_32%),radial-gradient(circle_at_86%_22%,rgba(212,98,43,0.18),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.045),rgba(255,255,255,0)_42%)]" />
+      <div className="absolute inset-0 opacity-[0.13] [background-image:linear-gradient(rgba(255,255,255,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.10)_1px,transparent_1px)] [background-size:32px_32px]" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#00B4D8]/60 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#D4622B]/45 to-transparent" />
+
+      <div className="container relative z-10">
+        <motion.div
+          className="mx-auto mb-14 max-w-3xl text-center"
+          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1] }}
+          viewport={{ once: true, amount: 0.35 }}
+          whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+        >
+          <span className="section-eyebrow mb-4 block">
+            {t("COMPETITIVE ADVANTAGE", "COMPETITIVE ADVANTAGE")}
+          </span>
+          <img
+            alt={`${BRAND.name} logo`}
+            className="mx-auto mb-7 h-12 w-auto"
+            decoding="async"
+            src={BRAND.logo}
+          />
+          <h2
+            id="comparison-heading"
+            className="font-display text-4xl leading-tight text-white sm:text-5xl"
+          >
+            {t(`${BRAND.name} vs. Traditional Industrial VR`, `${BRAND.name} vs. Traditional Industrial VR`)}
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/58">
+            {t(
+              "A focused comparison for enterprise training teams evaluating Arabic-first industrial XR, digital twin fidelity, procurement readiness, and deployment speed.",
+              "A focused comparison for enterprise training teams evaluating Arabic-first industrial XR, digital twin fidelity, procurement readiness, and deployment speed."
+            )}
+          </p>
+        </motion.div>
+
+        <motion.div
+          className="mx-auto max-w-6xl overflow-hidden rounded-2xl border border-[#00B4D8]/20 bg-[#0D2040]/82 shadow-[0_28px_90px_rgba(0,0,0,0.34)] backdrop-blur-xl"
+          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.55, delay: 0.08, ease: [0.23, 1, 0.32, 1] }}
+          viewport={{ once: true, amount: 0.2 }}
+          whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+        >
+          <div className="grid grid-cols-12 border-b border-white/10 bg-[#0A1E36]/80 text-xs font-semibold uppercase tracking-[0.14em] text-white/58">
+            <div className="col-span-12 px-5 py-4 md:col-span-3 md:px-7">
+              {t("Evaluation axis", "Evaluation axis")}
+            </div>
+            <div className="col-span-7 flex items-center gap-3 border-t border-white/10 px-5 py-4 text-[#00B4D8] md:col-span-5 md:border-l md:border-t-0 md:px-7">
+              <img
+                alt=""
+                aria-hidden="true"
+                className="h-6 w-auto"
+                decoding="async"
+                src={BRAND.logo}
+              />
+              <span>{t(`${BRAND.name} platform`, `${BRAND.name} platform`)}</span>
+            </div>
+            <div className="col-span-5 border-l border-t border-white/10 px-5 py-4 md:col-span-4 md:border-t-0 md:px-7">
+              {t("Typical competitors", "Typical competitors")}
+            </div>
+          </div>
+
+          <div className="divide-y divide-white/10">
+            {compareRows.map((row, index) => (
+              <motion.article
+                key={row.feature}
+                className="group grid grid-cols-12 bg-[#0F2A4A]/54 transition-colors duration-200 hover:bg-[#1A3A5C]/62"
+                initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+                transition={{ duration: 0.42, delay: 0.06 * index, ease: [0.23, 1, 0.32, 1] }}
+                viewport={{ once: true, amount: 0.22 }}
+                whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+              >
+                <div className="col-span-12 flex items-center gap-3 px-5 py-5 md:col-span-3 md:px-7">
+                  <span className="font-mono text-xs text-[#00B4D8]/70">0{index + 1}</span>
+                  <h3 className="text-sm font-semibold text-white/82">{t(row.feature, row.feature)}</h3>
+                </div>
+
+                <div className="relative col-span-7 border-t border-white/10 px-5 py-5 md:col-span-5 md:border-l md:border-t-0 md:px-7">
+                  <div className="absolute inset-y-3 left-0 hidden w-px bg-[#00B4D8]/50 md:block" />
+                  <div className="flex items-start gap-3 rounded-xl border border-[#00B4D8]/28 bg-[#00B4D8]/[0.075] p-4 shadow-[0_12px_36px_rgba(0,180,216,0.08)] transition-colors duration-200 group-hover:border-[#00B4D8]/60 group-hover:bg-[#00B4D8]/[0.11]">
+                    <PositiveIndicator />
+                    <p className="text-sm font-semibold leading-relaxed text-white">
+                      {t(row.simulxr, row.simulxr)}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="col-span-5 border-l border-t border-white/10 px-5 py-5 md:col-span-4 md:border-t-0 md:px-7">
+                  <div className="flex items-start gap-3 rounded-xl border border-white/8 bg-white/[0.035] p-4">
+                    <NegativeIndicator />
+                    <p className="text-sm leading-relaxed text-white/46">
+                      {t(row.competitors, row.competitors)}
+                    </p>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const { t } = useLanguage();
 
   const stat1 = useCountUp(80, 2000);
-  const stat2 = useCountUp(10, 1800);
-  const stat3 = useCountUp(75, 2200);
-  const stat4 = useCountUp(15, 1600);
+  const stat2 = useCountUp(4, 1800);
+  const stat3 = useCountUp(100, 2200);
+  const stat4 = useCountUp(40, 1600);
 
   return (
     <>
@@ -59,14 +271,17 @@ export default function Home() {
               {t("XR INDUSTRIAL TRAINING — EGYPT | GULF | MENA", "محاكاة XR الصناعية — مصر | الخليج | MENA")}
             </p>
 
-            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.05] mb-6 animate-fadeUp-delay-1 text-white">
-              {t("Before It Happens", "قبل أن يحدث")}<span className="text-gold">.</span>
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6 animate-fadeUp-delay-1 text-white">
+              {t(
+                "Your Workers Know the Procedure. Do They Know It Under Pressure?",
+                "موظفوك يعرفون الإجراء. هل يعرفونه تحت الضغط؟"
+              )}
             </h1>
 
             <p className="text-white/60 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl animate-fadeUp-delay-2">
               {t(
-                "Industrial XR simulations that turn oil & gas safety procedures into real muscle memory — before facing real danger on site.",
-                "محاكاة واقع افتراضي صناعية تُحوّل إجراءات السلامة ومعدات النفط والغاز إلى ذاكرة عضلية حقيقية — قبل مواجهة الخطر الحقيقي."
+                "SIMULXR transforms your facility CAD/BIM data into photorealistic VR training environments — emergency scenarios in Arabic and English, grounded in your real SOPs and scored for competency.",
+                "SIMULXR تُحوّل بيانات CAD/BIM الخاصة بمنشأتك إلى بيئات تدريب افتراضية فائقة الواقعية — سيناريوهات الطوارئ بالعربية والإنجليزية، مبنية على SOPs الحقيقية وتُقيَّم بمعايير الكفاءة."
               )}
             </p>
 
@@ -85,14 +300,21 @@ export default function Home() {
           {/* Hero Stats Bar */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-fadeUp-delay-3">
             {[
-              { value: "80%", label: t("Industrial accidents caused by human error", "من الحوادث الصناعية سببها الخطأ البشري"), source: "IOGP" },
-              { value: "10×", label: t("Cost reduction vs. physical drills", "توفير في التكلفة مقارنة بالتدريبات الميدانية"), source: "Industry" },
-              { value: "4", label: t("Integrated digital services", "خدمات رقمية متكاملة تحت سقف واحد"), source: "SIMUL XR" },
-              { value: "2", label: t("Languages — Arabic & English", "لغة — عربي وإنجليزي"), source: "SIMUL XR" },
+              { icon: TrendingUp, value: "80%", label: t("Knowledge retention vs. 20% classroom baseline", "معدل استيعاب 80% مقارنة بـ 20% في التدريب التقليدي") },
+              { icon: Zap, value: "4×", label: t("Faster training completion vs. traditional methods", "أسرع 4 مرات في إتمام التدريب عن الأساليب التقليدية") },
+              { icon: Shield, value: "$0", label: t("Risk during VR training — zero physical exposure", "صفر مخاطر خلال التدريب الافتراضي — لا تعرض جسدي") },
+              { icon: Layers3, value: "100%", label: t("Audit-ready competency data exported per session", "بيانات كفاءة جاهزة للتدقيق تُصدَّر بعد كل جلسة") },
             ].map((stat, i) => (
-              <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 text-center">
-                <div className="font-display text-2xl md:text-3xl text-[#D4622B] mb-1">{stat.value}</div>
-                <p className="text-white/50 text-xs leading-tight">{stat.label}</p>
+              <div
+                key={i}
+                className="group relative min-h-32 overflow-hidden rounded-lg border border-white/12 bg-white/[0.055] p-4 text-center backdrop-blur-sm transition-colors duration-200 hover:border-[#00B4D8]/40 hover:bg-[#0F2A4A]/72"
+              >
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#00B4D8]/45 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                <div className="mx-auto mb-2 flex h-8 w-8 items-center justify-center rounded-md border border-[#00B4D8]/25 bg-[#00B4D8]/10 text-[#00B4D8]">
+                  <stat.icon aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
+                </div>
+                <div className="font-display mb-1 text-2xl text-[#D4622B] md:text-3xl">{stat.value}</div>
+                <p className="text-xs leading-tight text-white/55">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -159,10 +381,10 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6">
             <div>
               <span className="section-eyebrow mb-4 block">
-                {t("OUR DIGITAL SERVICES", "خدماتنا الرقمية")}
+                {t("OUR SOLUTIONS", "حلولنا")}
               </span>
               <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
-                {t("Four Specialized Digital Services for Oil & Gas", "أربع خدمات رقمية متخصصة لصناعة النفط والغاز")}
+                {t("Eight Integrated XR Solutions for Industrial Safety", "ثماني حلول XR متكاملة للسلامة الصناعية")}
               </h2>
             </div>
             <Link href="/services" className="btn-outline-dark">
@@ -172,17 +394,21 @@ export default function Home() {
           </div>
           <p className="text-white/50 max-w-3xl mb-12 text-lg">
             {t(
-              "Complete XR solutions — standard simulations ready to deploy, or fully custom built from your facility data.",
-              "حلول XR متكاملة — بمحاكاة قياسية جاهزة أو مخصصة بالكامل من بيانات منشأتك الفعلية."
+              "Purpose-built from your facility CAD/BIM data — emergency response, equipment operation, and competency assessment in one connected platform.",
+              "مبنية خصيصاً من بيانات CAD/BIM لمنشأتك — الاستجابة للطوارئ وتشغيل المعدات وتقييم الكفاءة في منصة واحدة متكاملة."
             )}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { num: "01", title: t("Equipment & Machinery Simulation", "محاكاة المعدات والآلات"), desc: t("Before your operator touches the first gas valve — we make them do it a hundred times virtually.", "قبل أن يلمس مشغّلك صمام الغاز الأول — نجعله يفعل ذلك مئة مرة في الافتراضي."), img: IMAGES.simEquipment },
-              { num: "02", title: t("HSE Safety Scenarios", "محاكاة سيناريوهات السلامة"), desc: t("Correct response requires muscle memory — built through repeated practice under realistic pressure.", "الاستجابة السليمة تحتاج ذاكرة عضلية — لا تتكوّن إلا بالممارسة المتكررة تحت ضغط واقعي."), img: IMAGES.simEmergency },
-              { num: "03", title: t("Virtual Control Room", "غرفة التحكم الافتراضية"), desc: t("A virtual replica of your control room — every screen, device, and SCADA/DCS system.", "نسخة افتراضية مطابقة لغرفة تحكمك — بكل الشاشات والأجهزة وأنظمة SCADA/DCS."), img: IMAGES.simConfined },
-              { num: "04", title: t("Drill & Well Control Simulation", "محاكاة الحفر وضبط الآبار"), desc: t("Same training outcome as DrillSIM at a fraction of the cost — on Meta Quest, in Arabic.", "نفس نتيجة التدريب بعُشر التكلفة — على Meta Quest، بالعربية."), img: IMAGES.simOnboarding },
+              { num: "01", title: t("Emergency Response", "الاستجابة للطوارئ"), desc: t("When a gas leak alarm sounds, your workers have seconds. Did they ever practice this? Immersive VR simulations for gas leaks, fires, and evacuations — built from your facility layout.", "عندما تدق إنذارات تسريب الغاز، لدى عمالك ثوانٍ معدودة. هل تدربوا على ذلك من قبل؟ محاكاة غامرة لتسريبات الغاز والحرائق والإخلاء — مبنية من تخطيط منشأتك."), img: IMAGES.simEmergency },
+              { num: "02", title: t("Digital Twin Training", "التدريب بالتوأم الرقمي"), desc: t("A photorealistic virtual replica of your facility — built from actual CAD/BIM/Navisworks files, every device and system reproduced exactly.", "نسخة افتراضية فائقة الواقعية من منشأتك — مبنية من ملفات CAD/BIM/Navisworks الحقيقية، بجميع الأجهزة والأنظمة بدقة متناهية."), img: IMAGES.simConfined },
+              { num: "03", title: t("HSE Competency Platform", "منصة كفاءة HSE"), desc: t("Real-time competency scoring, performance tracking, and audit-ready HSE compliance reports for every training session.", "تقييم الكفاءة في الوقت الفعلي وتتبع الأداء وتقارير امتثال HSE جاهزة للتدقيق في كل جلسة تدريبية."), img: IMAGES.simOnboarding },
+              { num: "04", title: t("Equipment Operation Simulation", "محاكاة تشغيل المعدات"), desc: t("Before your operator touches the first gas valve — we make them do it a hundred times virtually, in your actual equipment environment.", "قبل أن يلمس مشغّلك صمام الغاز الأول — نجعله يفعل ذلك مئة مرة افتراضياً، في بيئة معداتك الفعلية."), img: IMAGES.simEquipment },
+              { num: "05", title: t("Confined Space & LOTO", "الفضاء المحدود والقفل والوسم (LOTO)"), desc: t("Confined space emergencies and lockout/tagout procedures practiced under realistic pressure — with zero physical risk.", "حالات طوارئ الفضاء المحدود وإجراءات القفل والوسم (LOTO) تُمارَس تحت ضغط واقعي — بدون أي مخاطر جسدية."), img: IMAGES.simLoto },
+              { num: "06", title: t("AR Field Support", "الدعم الميداني بالواقع المعزز"), desc: t("Step-by-step AR guidance for maintenance and inspection — expert knowledge delivered on-site, on the headset, without flying an expert in.", "إرشاد AR خطوة بخطوة للصيانة والفحص — خبرة فورية في الموقع على الخوذة، دون استدعاء خبير."), img: IMAGES.simMaintenance },
+              { num: "07", title: t("Smart Learning Platform", "منصة التعلم الذكي"), desc: t("Adaptive VR scenarios that adjust difficulty based on competency scores, with bilingual support and offline deployment for remote sites.", "سيناريوهات VR تكيّفية تُعدّل مستوى الصعوبة بناءً على درجات الكفاءة، بدعم ثنائي اللغة ونشر بدون إنترنت للمواقع النائية."), img: IMAGES.simOnboarding },
+              { num: "08", title: t("Enterprise XR Program", "برنامج XR المؤسسي"), desc: t("A full-service engagement from safety audit to deployment — complete training modernization, managed end to end.", "برنامج متكامل من تدقيق السلامة حتى التشغيل — تحديث كامل لمنظومة التدريب بإدارة شاملة من البداية للنهاية."), img: IMAGES.simEquipment },
             ].map((service, i) => (
               <Link key={i} href="/services" className="card-dark rounded-lg overflow-hidden group cursor-pointer flex flex-col md:flex-row">
                 <div className="md:w-2/5 aspect-[16/10] md:aspect-auto overflow-hidden">
@@ -239,51 +465,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════ DIFFERENTIATION TABLE ═══════════════════ */}
-      <section className="py-24 md:py-32 bg-white">
-        <div className="container">
-          <div className="text-center mb-16">
-            <span className="section-eyebrow mb-4 block" style={{ color: "#00B4D8" }}>
-              {t("WHY SIMUL XR", "لماذا SIMUL XR")}
-            </span>
-            <h2 className="font-display text-4xl sm:text-5xl text-[#0F2A4A] leading-tight">
-              {t("How We Compare", "ما يميزنا")}
-            </h2>
-          </div>
-
-          <div className="max-w-3xl mx-auto space-y-4">
-            {[
-              { us: t("Native Arabic content", "عربي أصلي — Native Arabic content"), them: t("No real Arabic in industrial VR", "لا أحد يقدم عربي فعلي في VR الصناعية") },
-              { us: t("Built from your actual facility CAD", "مبني من CAD منشأتك الفعلية"), them: t("Generic templates that don't reflect your site", "قوالب عامة لا تعكس موقعك") },
-              { us: t("4 integrated services under one roof", "4 خدمات متكاملة تحت سقف واحد"), them: t("Each competitor covers only a part", "كل منافس يغطي جزءاً فقط") },
-              { us: t("MENA team — understands procurement culture", "فريق MENA — يفهم ثقافة المشتريات"), them: t("Western companies far from the market", "شركات غربية بعيدة عن السوق") },
-              { us: t("Delivery in 2-14 weeks", "تسليم في 2-14 أسبوع"), them: t("3-18 months with competitors", "3-18 شهر عند المنافسين") },
-              { us: t("Affordable for mid-market", "سعر مناسب للـ mid-market"), them: t("$200K-$2M with TSC & 3T Drilling", "$200K-$2M عند TSC و3T Drilling") },
-            ].map((row, i) => (
-              <div key={i} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex items-start gap-3 bg-green-50 border border-green-100 rounded-lg p-4">
-                  <CheckCircle2 className="w-5 h-5 text-green-600 mt-0.5 shrink-0" />
-                  <span className="text-gray-700 text-sm">{row.us}</span>
-                </div>
-                <div className="flex items-start gap-3 bg-red-50 border border-red-100 rounded-lg p-4">
-                  <XCircle className="w-5 h-5 text-red-400 mt-0.5 shrink-0" />
-                  <span className="text-gray-500 text-sm">{row.them}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CompareSection />
 
       {/* ═══════════════════ STATS BAR ═══════════════════ */}
       <section className="py-16 bg-[#0F2A4A]">
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { ref: stat1.ref, count: stat1.count, suffix: "%", label: t("Industrial accidents caused by human error", "من الحوادث الصناعية سببها الخطأ البشري") },
-              { ref: stat2.ref, count: stat2.count, suffix: "×", label: t("Lower cost vs. physical drills", "توفير في التكلفة مقارنة بالتدريبات الميدانية") },
-              { ref: stat3.ref, count: stat3.count, suffix: "%", label: t("Higher retention vs. classroom", "ارتفاع معدل الاستيعاب مقارنة بالتدريب التقليدي") },
-              { ref: stat4.ref, count: stat4.count, prefix: "$", suffix: "B", label: t("Annual O&G training spend globally", "الإنفاق العالمي السنوي على تدريب النفط والغاز") },
+              { ref: stat1.ref, count: stat1.count, suffix: "%", label: t("Knowledge retention vs. 20% classroom baseline", "معدل الاستيعاب مقارنة بـ 20% في التدريب التقليدي") },
+              { ref: stat2.ref, count: stat2.count, suffix: "×", label: t("Faster training completion vs. traditional methods", "أسرع في إتمام التدريب عن الأساليب التقليدية") },
+              { ref: stat3.ref, count: stat3.count, suffix: "%", label: t("Audit-ready competency data exported per session", "بيانات كفاءة جاهزة للتدقيق تُصدَّر بعد كل جلسة") },
+              { ref: stat4.ref, count: stat4.count, suffix: "%", label: t("Reduction in emergency response time after VR training", "انخفاض وقت الاستجابة للطوارئ بعد التدريب الافتراضي") },
             ].map((stat, i) => (
               <div key={i} ref={stat.ref} className="text-center p-8">
                 <div className="font-display text-4xl md:text-5xl mb-3 text-[#D4622B]">
@@ -348,12 +540,12 @@ export default function Home() {
       <section className="py-24 md:py-32 bg-[#D4622B] relative overflow-hidden">
         <div className="container relative z-10 text-center">
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white mb-6">
-            {t("Your Workforce Deserves to Be Prepared.", "فريقك يستحق أن يكون مستعداً.")}
+            {t("Ready to Train for the Unthinkable?", "هل أنتم مستعدون للتدريب على ما لا يُتصوَّر؟")}
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
             {t(
-              "Start with a 90-day pilot — one simulation, 50 trainees, full performance report. Zero operational disruption.",
-              "ابدأ بـ pilot مدته 90 يوماً — محاكاة واحدة، 50 متدرباً، تقرير أداء كامل. بدون تعطل للعمليات."
+              "Start with a 90-day pilot — one simulation, 50 trainees, full competency report. Zero operational disruption. Your workforce prepared before real danger strikes.",
+              "ابدأ بـ pilot مدته 90 يوماً — محاكاة واحدة، 50 متدرباً، تقرير كفاءة كامل. بدون تعطل للعمليات. فريقك مستعد قبل أن يواجه الخطر الحقيقي."
             )}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
