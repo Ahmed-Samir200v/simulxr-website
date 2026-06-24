@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ArrowRight, Wrench, ShieldAlert, Monitor, Drill, Package, Building2 } from "lucide-react";
+import { ArrowRight, Wrench, ShieldAlert, Monitor, Package, Building2, Layers3, TrendingUp, Zap, Shield } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
 import { IMAGES } from "@/lib/assets";
@@ -10,99 +10,199 @@ export default function Services() {
 
   const services = [
     {
-      id: "SIM-EQUIP",
+      id: "SIM-EMERGENCY",
       num: "01",
-      icon: Wrench,
-      title: t("Equipment & Machinery Simulation", "محاكاة المعدات والآلات الصناعية"),
+      icon: ShieldAlert,
+      title: t("Emergency Response", "الاستجابة للطوارئ"),
       desc: t(
-        "Before your operator touches the first gas valve or starts a compressor for the first time — we make them do it a hundred times virtually.",
-        "قبل أن يلمس مشغّلك صمام الغاز الأول أو يشغّل ضاغطاً لأول مرة — نجعله يفعل ذلك مئة مرة في الافتراضي."
+        "When a gas leak alarm sounds, your workers have seconds. Did they ever practice this? Immersive VR simulations for gas leaks, fires, and evacuations — built from your facility layout, grounded in API RP 505, NFPA 72, and ISA-84.",
+        "عندما تدق إنذارات تسريب الغاز، لدى عمالك ثوانٍ معدودة. هل تدربوا على ذلك من قبل؟ محاكاة غامرة لتسريبات الغاز والحرائق والإخلاء — مبنية من تخطيط منشأتك، وفق API RP 505 وNFPA 72 وISA-84."
       ),
-      img: IMAGES.simEquipment,
+      img: IMAGES.simEmergency,
       items: [
-        t("Valves — Opening, closing, isolation, position verification, full isolation sequence", "صمامات — فتح، إغلاق، عزل، تحقق من الوضع، تسلسل العزل الكامل"),
-        t("Pumps — Start-up, shutdown, pre-operation checks, preventive maintenance", "مضخات — التشغيل والإيقاف والفحص الأولي والصيانة الوقائية"),
-        t("Compressors & Turbines — Operating procedures and emergency shutdown protocols", "ضواغط وتوربينات — إجراءات التشغيل وبروتوكولات الإيقاف الاضطراري"),
-        t("ESD Systems — Full emergency shutdown sequence under time pressure", "أنظمة ESD — تسلسل الإغلاق الاضطراري الكامل تحت ضغط الوقت"),
-        t("Control Panels — Reading pressure, temperature, flow and correct response", "لوحات التحكم — قراءة الضغط والحرارة والتدفق والاستجابة الصحيحة"),
-        t("AR Maintenance — Step-by-step AR overlay instructions on real equipment", "صيانة AR — إرشادات خطوة بخطوة بتراكب ثلاثي الأبعاد على المعدة الحقيقية"),
+        t("Gas Leak Detection — identify source using virtual monitors in facility-specific environments", "كشف تسريب الغاز — تحديد المصدر باستخدام أجهزة المراقبة الافتراضية في بيئات المنشأة"),
+        t("Isolation & Shutdown Sequences — execute under time pressure with full ESD protocol", "تسلسلات العزل والإغلاق — التنفيذ تحت ضغط الوقت بموجب بروتوكول ESD الكامل"),
+        t("Fire Response — suppression activation, equipment use, evacuation routes", "الاستجابة للحريق — تفعيل الإطفاء واستخدام المعدات ومسارات الإخلاء"),
+        t("H2S Exposure — recognition, PPE donning, muster procedures", "التعرض لـ H2S — التعرف وارتداء معدات الوقاية وإجراءات التجمع"),
+        t("Reduced-Visibility Evacuation — navigate smoke-filled corridors to assembly points", "الإخلاء في ظروف الرؤية المنخفضة — التنقل عبر ممرات مليئة بالدخان لنقاط التجمع"),
+        t("Multi-Participant Team Response — coordinate field and control room roles simultaneously", "الاستجابة الجماعية متعددة المشاركين — تنسيق أدوار الميدان وغرفة التحكم في آن واحد"),
+        t("Mass Evacuation — assembly, headcount, reporting protocol under realistic pressure", "الإخلاء الجماعي — التجمع وعد الأفراد وبروتوكول الإبلاغ تحت ضغط واقعي"),
+        t("Chemical Spill Containment — initial response, drain protection, notification chain", "احتواء الانسكاب الكيميائي — الاستجابة الأولى وحماية المجاري وسلسلة الإشعار"),
       ],
       outcomes: [
-        t("Reduce operational errors by up to 60% in the first months", "خفض أخطاء التشغيل بنسبة تصل لـ 60% في الأشهر الأولى"),
-        t("Cut new employee onboarding time from weeks to days", "تقليل وقت تأهيل الموظف الجديد من أسابيع إلى أيام"),
-        t("Zero production downtime during training", "صفر توقف للإنتاج خلال التدريب"),
+        t("40% reduction in emergency response time after VR training", "انخفاض 40% في وقت الاستجابة للطوارئ بعد التدريب الافتراضي"),
+        t("80% knowledge retention vs. 20% from classroom baseline", "معدل استيعاب 80% مقارنة بـ 20% من التدريب التقليدي"),
+        t("95%+ first-attempt correct isolation sequences vs. 60% baseline", "أكثر من 95% نجاح في تسلسل العزل من المحاولة الأولى مقارنة بـ 60% في الأساس"),
+        t("Unlimited VR drills at zero cost — vs. one annual physical drill", "تمارين VR غير محدودة بتكلفة صفر — مقارنة بتمرين ميداني واحد سنوياً"),
+        t("$500K–$2M+ saved per prevented incident", "توفير 500 ألف دولار إلى أكثر من مليوني دولار لكل حادثة يتم تفاديها"),
+      ],
+    },
+    {
+      id: "SIM-TWIN",
+      num: "02",
+      icon: Monitor,
+      title: t("Digital Twin Training", "التدريب بالتوأم الرقمي"),
+      desc: t(
+        "A photorealistic virtual replica of your facility — built from actual CAD/BIM/Navisworks files. Every screen, device, SCADA and DCS system reproduced exactly. Operators train on scenarios that would halt real production.",
+        "نسخة افتراضية فائقة الواقعية من منشأتك — مبنية من ملفات CAD/BIM/Navisworks الحقيقية. كل شاشة وجهاز ونظام SCADA وDCS مُعاد إنشاؤه بدقة متناهية. يتدرب المشغّلون على سيناريوهات ستوقف الإنتاج الفعلي."
+      ),
+      img: IMAGES.simConfined,
+      items: [
+        t("Abnormal Operations — pressure, temperature, flow anomalies from your actual instrumentation", "الحالات غير الاعتيادية — شذوذات الضغط والحرارة والتدفق من أجهزتك الفعلية"),
+        t("Full ESD — complete plant shutdown sequence under time pressure", "الإغلاق الاضطراري الكامل — تسلسل إغلاق المنشأة الكاملة تحت ضغط الوقت"),
+        t("Power Failure — partial and full, activating backup systems", "انقطاع الطاقة الجزئي والكامل — تفعيل الأنظمة الاحتياطية"),
+        t("Alarm Flood Management — prioritization and correct response to multiple simultaneous alarms", "إدارة تراكم الإنذارات — ترتيب الأولويات والاستجابة الصحيحة لإنذارات متزامنة متعددة"),
+        t("Field Team Coordination — control room decisions with parallel field reports", "تنسيق الفريق الميداني — قرارات غرفة التحكم مع تقارير ميدانية متوازية"),
+        t("Shift Handover Protocol — live handover during active emergency scenarios", "بروتوكول تسليم المناوبة — تسليم مباشر أثناء سيناريوهات الطوارئ النشطة"),
+      ],
+      outcomes: [
+        t("Train a full plant shutdown without halting real production — run it weekly instead of annually", "التدريب على إغلاق كامل للمنشأة دون وقف الإنتاج الفعلي — أسبوعياً بدلاً من سنوياً"),
+        t("Operators arrive on shift having survived the hardest scenarios in simulation first", "يصل المشغّلون إلى وردياتهم وقد نجوا من أصعب السيناريوهات في المحاكاة أولاً"),
+        t("Audit-ready competency records for every control room training session", "سجلات كفاءة جاهزة للتدقيق لكل جلسة تدريب في غرفة التحكم"),
       ],
     },
     {
       id: "SIM-HSE",
-      num: "02",
-      icon: ShieldAlert,
-      title: t("HSE Safety Scenarios & Emergency Response", "محاكاة سيناريوهات السلامة وحالات الطوارئ"),
-      desc: t(
-        "You cannot train someone to face a gas leak with words. Correct response requires muscle memory — and this only builds through repeated practice under realistic pressure.",
-        "لا يمكنك تدريب شخص على مواجهة تسريب غاز بالكلام. الاستجابة السليمة تحتاج ذاكرة عضلية — وهذه لا تتكوّن إلا بالممارسة المتكررة تحت ضغط واقعي."
-      ),
-      img: IMAGES.simEmergency,
-      items: [
-        t("Gas Leak & First Response — Alarm recognition, source isolation, ESD, evacuation", "تسريب الغاز والاستجابة الأولى — التعرف على الإنذار، عزل المصدر، ESD، الإخلاء"),
-        t("Facility Fire Response — Fire suppression activation, equipment use, evacuation routes", "الحريق في المنشأة — تفعيل الإطفاء، استخدام المعدات، مسارات الإخلاء"),
-        t("Chemical Spill Response — Initial containment, drain protection, notification", "الانسكاب الكيميائي — الاحتواء الأولي، حماية المجاري، الإشعار"),
-        t("Full Emergency Shutdown — Facility-wide ESD sequence", "الإغلاق الاضطراري الكامل — تسلسل ESD على مستوى المنشأة"),
-        t("Confined Space Entry — PTW, air testing, backup rescue", "الدخول للأماكن المغلقة — PTW، اختبار الهواء، الإنقاذ الاحتياطي"),
-        t("LOTO Procedures — Electrical, mechanical, and hydraulic isolation", "إجراءات LOTO — عزل الكهرباء والميكانيكا والهيدروليكا"),
-        t("Hot Work Permits — Permit acquisition, hazard zones", "الأعمال الساخنة — الحصول على التصاريح، مناطق الخطر"),
-        t("Mass Evacuation — Assembly, headcount, reporting protocol", "الإخلاء الجماعي — التجمع، عد الأفراد، بروتوكول الإبلاغ"),
-      ],
-      outcomes: [
-        t("Raise HSE assessment pass rates by 30-40%", "رفع معدل اجتياز تقييمات HSE بنسبة 30-40%"),
-        t("Reduce emergency response time in real drills", "تقليل وقت الاستجابة للطوارئ في التمارين الحقيقية"),
-        t("Full audit-ready documentation — ready for regulators", "توثيق كامل قابل للتدقيق — جاهز للجهات الرقابية"),
-      ],
-    },
-    {
-      id: "SIM-VCR",
       num: "03",
-      icon: Monitor,
-      title: t("Virtual Control Room", "غرفة التحكم الافتراضية"),
+      icon: Layers3,
+      title: t("HSE Competency Platform", "منصة كفاءة HSE"),
       desc: t(
-        "The control room operator makes the first decision in any crisis. We build a virtual replica of your control room — every screen, device, and SCADA/DCS system — where operators train on the hardest scenarios.",
-        "مشغّل غرفة التحكم هو القرار الأول في أي أزمة. نبني نسخة افتراضية مطابقة لغرفة تحكمك — بكل الشاشات والأجهزة وأنظمة SCADA/DCS — ويتدرب فيها مشغّلوك على أصعب السيناريوهات."
-      ),
-      img: IMAGES.simConfined,
-      items: [
-        t("Abnormal Operations — pressure, temperature, flow anomalies", "الحالات غير الاعتيادية — ضغط، حرارة، تدفق"),
-        t("Full ESD — complete plant shutdown sequence under time pressure", "الإغلاق الاضطراري الكامل — تحت ضغط الوقت"),
-        t("Power Failure — partial and full, activating backup systems", "انقطاع الطاقة الجزئي والكامل — تفعيل الأنظمة الاحتياطية"),
-        t("Alarm Flood — prioritization and correct response to multiple alarms", "تراكم الإنذارات — ترتيب الأولويات والاستجابة الصحيحة"),
-        t("Field Team Coordination — decisions with parallel field reports", "التنسيق مع الفريق الميداني — قرارات مع تقارير ميدانية متوازية"),
-        t("Shift Handover — handover protocol during active emergency", "تسليم المناوبة تحت الضغط — بروتوكول التسليم أثناء الطوارئ"),
-      ],
-      outcomes: [
-        t("Training a full plant shutdown on the real system means hours of downtime. With Virtual Control Room — this happens weekly.", "التدريب على سيناريو إغلاق كامل للمنشأة على النظام الحقيقي يعني إيقاف الإنتاج لساعات. مع Virtual Control Room — يحدث هذا التدريب أسبوعياً."),
-      ],
-    },
-    {
-      id: "SIM-DRILL",
-      num: "04",
-      icon: Drill,
-      title: t("Drilling & Well Control XR Simulation", "محاكاة الحفر وضبط الآبار"),
-      desc: t(
-        "Train drillers and assistant drillers on critical operations and well control scenarios — with immersive XR on Meta Quest. Same training outcome at a fraction of the cost without freezing drilling production.",
-        "تدريب حفريّو الآبار ومشغّلو الحفر على العمليات الحرجة وسيناريوهات well control — بتقنية XR غامرة على Meta Quest. نفس نتيجة التدريب الفعلي بعُشر التكلفة وبدون تجميد إنتاج الحفر."
+        "Real-time competency scoring, performance tracking, and audit-ready HSE compliance reports for every training session. Transform training data into actionable intelligence for HSE managers and regulators.",
+        "تقييم الكفاءة في الوقت الفعلي وتتبع الأداء وتقارير امتثال HSE جاهزة للتدقيق في كل جلسة تدريبية. تحويل بيانات التدريب إلى معلومات قابلة للتنفيذ لمديري HSE والجهات التنظيمية."
       ),
       img: IMAGES.simOnboarding,
       items: [
-        t("Basic Drilling Operations — running, making hole, connections (IADC)", "عمليات الحفر الأساسية — IADC"),
-        t("Well Control Scenarios — kick detection, shut-in, kill procedures (IWCF L3/L4)", "التحكم في الآبار — well control — IWCF L3/L4"),
-        t("Drilling Equipment Malfunctions — BOP, mud pumps, top drive (IADC)", "أعطال معدات الحفر — BOP, mud pumps, top drive"),
-        t("Tripping and Connection Operations (IADC)", "عمليات الكشط والتوصيل — IADC"),
-        t("Drilling Indicators — pit gain, pump pressure anomalies (IWCF)", "قراءة مؤشرات الحفر — IWCF"),
-        t("Directional Drilling Operations — inclination, azimuth control (IADC)", "الحفر الاتجاهي — directional — IADC"),
-        t("Kick Detection and Initial Response (IWCF L3)", "Kick الاستجابة الأولى — IWCF L3"),
-        t("BOP Operation and Well Killing Procedures (IWCF L4)", "إجراءات Blowout Prevention — IWCF L4"),
+        t("Per-trainee competency scores — response time, decision accuracy, procedure sequence", "درجات الكفاءة لكل متدرب — وقت الاستجابة ودقة القرار وتسلسل الإجراءات"),
+        t("HSE gap analysis — identify individuals at highest risk before an incident reveals them", "تحليل ثغرات HSE — تحديد الأفراد الأعلى خطراً قبل أن يكشف الحادث عنهم"),
+        t("Competency trending — track improvement across sessions and over time", "اتجاهات الكفاءة — تتبع التحسن عبر الجلسات وبمرور الوقت"),
+        t("Regulatory export — one-click compliance reports aligned with OSHA, API RP 505, IOGP", "التصدير التنظيمي — تقارير امتثال بنقرة واحدة متوافقة مع OSHA وAPI RP 505 وIOGP"),
+        t("Manager dashboards — real-time visibility for HSE teams across sites", "لوحات تحكم المديرين — رؤية فورية لفرق HSE عبر المواقع"),
+        t("Certification tracking — monitor renewal dates and competency expiry", "تتبع الشهادات — مراقبة تواريخ التجديد وانتهاء صلاحية الكفاءة"),
       ],
       outcomes: [
-        t("DrillSIM systems cost $200K-$2M and need dedicated rooms. SIMUL XR runs on Meta Quest — portable, any location, in Arabic.", "أنظمة DrillSIM تكلف $200K-$2M وتحتاج غرفة مخصصة. محاكاة SIMUL XR تعمل على Meta Quest — محمولة، في أي موقع، بالعربية."),
+        t("Replace annual assessments with ongoing competency monitoring — catch gaps before they become incidents", "استبدال التقييمات السنوية بمراقبة مستمرة للكفاءة — اكتشاف الثغرات قبل أن تتحول إلى حوادث"),
+        t("One-click regulatory export — no manual report preparation for audits", "تصدير تنظيمي بنقرة واحدة — لا تحضير يدوي للتقارير للتدقيق"),
+        t("Full audit trail from day one of deployment", "مسار تدقيق كامل منذ اليوم الأول للنشر"),
+      ],
+    },
+    {
+      id: "SIM-EQUIP",
+      num: "04",
+      icon: Wrench,
+      title: t("Equipment Operation Simulation", "محاكاة تشغيل المعدات"),
+      desc: t(
+        "Before your operator touches the first gas valve or starts a compressor for the first time — we make them do it a hundred times virtually, in your actual equipment environment. Zero production risk, full muscle memory.",
+        "قبل أن يلمس مشغّلك صمام الغاز الأول أو يشغّل ضاغطاً لأول مرة — نجعله يفعل ذلك مئة مرة افتراضياً، في بيئة معداتك الفعلية. صفر مخاطر للإنتاج، ذاكرة عضلية كاملة."
+      ),
+      img: IMAGES.simEquipment,
+      items: [
+        t("Valves — opening, closing, isolation, position verification, full isolation sequences", "الصمامات — الفتح والإغلاق والعزل والتحقق من الوضع وتسلسلات العزل الكاملة"),
+        t("Pumps — start-up, shutdown, pre-operation checks, preventive maintenance procedures", "المضخات — التشغيل والإيقاف والفحوصات الأولية وإجراءات الصيانة الوقائية"),
+        t("Compressors & Turbines — operating procedures and emergency shutdown protocols", "الضواغط والتوربينات — إجراءات التشغيل وبروتوكولات الإيقاف الاضطراري"),
+        t("ESD Systems — full emergency shutdown sequence under time pressure", "أنظمة ESD — تسلسل الإغلاق الاضطراري الكامل تحت ضغط الوقت"),
+        t("Control Panels — reading pressure, temperature, flow and correct response to anomalies", "لوحات التحكم — قراءة الضغط والحرارة والتدفق والاستجابة الصحيحة للشذوذات"),
+        t("Instrument Calibration — verification procedures for critical instrumentation", "معايرة الأجهزة — إجراءات التحقق للأجهزة الحيوية"),
+      ],
+      outcomes: [
+        t("Reduce operational errors by up to 60% in the first months after deployment", "خفض أخطاء التشغيل بنسبة تصل إلى 60% في الأشهر الأولى بعد النشر"),
+        t("Cut new employee onboarding time from weeks to days", "تقليل وقت تأهيل الموظف الجديد من أسابيع إلى أيام"),
+        t("Zero production downtime during training — train any time, any site", "صفر توقف للإنتاج خلال التدريب — التدريب في أي وقت وأي موقع"),
+      ],
+    },
+    {
+      id: "SIM-LOTO",
+      num: "05",
+      icon: Shield,
+      title: t("Confined Space & LOTO", "الفضاء المحدود والقفل والوسم (LOTO)"),
+      desc: t(
+        "Confined space emergencies and lockout/tagout procedures are among the most dangerous — and least practiced — scenarios in industrial settings. Workers who freeze in these moments were never truly prepared.",
+        "حوادث الفضاء المحدود وإجراءات القفل والوسم (LOTO) من أخطر السيناريوهات وأقلها تدريباً في البيئات الصناعية. العمال الذين يتجمدون في هذه اللحظات لم يُعدّوا لها حقاً."
+      ),
+      img: IMAGES.simLoto,
+      items: [
+        t("Confined Space Entry — PTW process, pre-entry atmosphere testing, attendant duties", "الدخول للفضاء المحدود — عملية PTW واختبار الغلاف الجوي قبل الدخول ومهام الحارس"),
+        t("Rescue Scenarios — victim identification, extraction procedures, communication protocols", "سيناريوهات الإنقاذ — تحديد الضحية وإجراءات الاستخراج وبروتوكولات التواصل"),
+        t("Electrical LOTO — isolation, verification, multi-point lockout for complex systems", "LOTO الكهربائي — العزل والتحقق والقفل متعدد النقاط للأنظمة المعقدة"),
+        t("Mechanical LOTO — pump, compressor, and valve isolation sequences", "LOTO الميكانيكي — تسلسلات عزل المضخات والضواغط والصمامات"),
+        t("Hydraulic System Isolation — full LOTO procedures under pressure", "عزل النظام الهيدروليكي — إجراءات LOTO الكاملة تحت الضغط"),
+        t("Hot Work in Confined Space — permit acquisition, continuous atmosphere monitoring", "الأعمال الساخنة في الفضاء المحدود — الحصول على التصريح والمراقبة المستمرة للغلاف الجوي"),
+      ],
+      outcomes: [
+        t("Practice scenarios legally impossible to run in real confined spaces — no physical risk", "ممارسة سيناريوهات يستحيل قانونياً تنفيذها في الفضاءات المحدودة الحقيقية — بدون مخاطر جسدية"),
+        t("Build LOTO muscle memory without halting production or requiring lockout of live systems", "بناء الذاكرة العضلية لـ LOTO دون إيقاف الإنتاج أو اشتراط قفل الأنظمة الحية"),
+        t("Audit-ready LOTO documentation for every isolation sequence practiced", "توثيق LOTO جاهز للتدقيق لكل تسلسل عزل يُمارَس"),
+      ],
+    },
+    {
+      id: "SIM-AR",
+      num: "06",
+      icon: Zap,
+      title: t("AR Field Support", "الدعم الميداني بالواقع المعزز"),
+      desc: t(
+        "Your field technician shouldn't need to call a senior engineer for every maintenance task. AR Field Support delivers expert guidance directly to the headset — step by step, on-site, in Arabic — without flying an expert in.",
+        "الفني الميداني لديك لا ينبغي أن يحتاج إلى الاتصال بمهندس أول لكل مهمة صيانة. الدعم الميداني AR يُوصّل إرشادات الخبراء مباشرة إلى الخوذة — خطوة بخطوة، في الموقع، بالعربية — دون استدعاء خبير."
+      ),
+      img: IMAGES.simMaintenance,
+      items: [
+        t("Valve Maintenance & Replacement — AR overlay on actual equipment with torque specs and sequence", "صيانة الصمامات واستبدالها — تراكب AR على المعدة الفعلية مع مواصفات العزم والتسلسل"),
+        t("Pump & Compressor Inspection — live AR checklists aligned with manufacturer SOPs", "فحص المضخات والضواغط — قوائم تفتيش AR مباشرة متوافقة مع SOPs الشركة المصنّعة"),
+        t("Instrument Calibration — guided AR walkthrough for critical instrumentation", "معايرة الأجهزة — جولة AR إرشادية للأجهزة الحيوية"),
+        t("Electrical Panel Inspection — live circuit overlays with safety zone identification", "فحص اللوحات الكهربائية — تراكبات الدائرة الحية مع تحديد مناطق الأمان"),
+        t("Pipe Fitting & Welding Verification — dimensional overlays for quality control", "التحقق من تركيب الأنابيب واللحام — تراكبات أبعاد لضبط الجودة"),
+        t("Remote Expert Collaboration — AR session shared with senior engineer anywhere in the world", "التعاون مع خبير عن بُعد — جلسة AR مشتركة مع مهندس أول في أي مكان بالعالم"),
+      ],
+      outcomes: [
+        t("Improve first-time fix rate for maintenance tasks — reduce repeat call-outs", "تحسين معدل الإصلاح من المحاولة الأولى لمهام الصيانة — تقليل الاستدعاءات المتكررة"),
+        t("Reduce expert site visits by 40–60% — same outcome without the travel cost", "تقليل زيارات الخبراء للموقع بنسبة 40-60% — نفس النتيجة بدون تكلفة السفر"),
+        t("Full digital record of every maintenance activity — traceable, audit-ready", "سجل رقمي كامل لكل نشاط صيانة — قابل للتتبع وجاهز للتدقيق"),
+      ],
+    },
+    {
+      id: "SIM-LMS",
+      num: "07",
+      icon: TrendingUp,
+      title: t("Smart Learning Platform", "منصة التعلم الذكي"),
+      desc: t(
+        "Training data without insight is noise. The Smart Learning Platform turns every VR session into actionable competency intelligence — adaptive scenarios, bilingual content, and offline deployment for remote sites.",
+        "بيانات التدريب بدون تحليل مجرد ضوضاء. منصة التعلم الذكي تحوّل كل جلسة VR إلى معلومات استخباراتية قابلة للتنفيذ — سيناريوهات تكيّفية ومحتوى ثنائي اللغة ونشر بدون إنترنت للمواقع النائية."
+      ),
+      img: IMAGES.simOnboarding,
+      items: [
+        t("Adaptive Difficulty — scenarios auto-adjust based on real-time performance scores", "الصعوبة التكيّفية — تتكيّف السيناريوهات تلقائياً بناءً على درجات الأداء الفوري"),
+        t("Competency Gap Analysis — identify and close individual skill deficits before incidents occur", "تحليل ثغرات الكفاءة — تحديد قصور المهارات الفردية وسدّها قبل وقوع الحوادث"),
+        t("Arabic + English bilingual content — native language, not translated, for full comprehension", "محتوى ثنائي اللغة عربي وإنجليزي — لغة أصلية لا مترجمة، لاستيعاب كامل"),
+        t("Offline Deployment — works without internet on remote oilfield and offshore sites", "النشر بدون إنترنت — يعمل بدون اتصال إنترنت في حقول النفط النائية والمنصات البحرية"),
+        t("Progress Dashboards — real-time HSE manager view across trainees and sites", "لوحات متابعة التقدم — رؤية فورية لمدير HSE عبر المتدربين والمواقع"),
+        t("LMS Integration — connect to existing learning management systems via API", "تكامل LMS — الاتصال بأنظمة إدارة التعلم الحالية عبر API"),
+      ],
+      outcomes: [
+        t("Replace generic annual assessments with ongoing, data-driven competency monitoring", "استبدال التقييمات السنوية العامة بمراقبة مستمرة للكفاءة مدفوعة بالبيانات"),
+        t("Identify high-risk individuals before an incident reveals them — proactive, not reactive", "تحديد الأفراد عالي المخاطر قبل أن يكشفهم الحادث — استباقي لا تفاعلي"),
+        t("Full audit trail for regulatory compliance — exportable on demand", "مسار تدقيق كامل للامتثال التنظيمي — قابل للتصدير عند الطلب"),
+      ],
+    },
+    {
+      id: "SIM-ENT",
+      num: "08",
+      icon: Building2,
+      title: t("Enterprise XR Program", "برنامج XR المؤسسي"),
+      desc: t(
+        "For organizations ready to modernize training at scale. A full-service engagement from safety audit to deployment — complete training modernization managed end to end by the SIMULXR team.",
+        "للمؤسسات المستعدة لتحديث التدريب على نطاق واسع. برنامج متكامل من تدقيق السلامة حتى التشغيل — تحديث كامل لمنظومة التدريب بإدارة شاملة من فريق SIMULXR."
+      ),
+      img: IMAGES.simEquipment,
+      items: [
+        t("Safety Gap Audit — identify highest-risk training deficits across your workforce", "تدقيق ثغرات السلامة — تحديد أعلى مخاطر قصور التدريب في قواتك العاملة"),
+        t("Custom Simulation Development — built from your facility CAD/BIM, SOPs, and incident history", "تطوير المحاكاة المخصصة — مبنية من CAD/BIM منشأتك وSOPs وسجل الحوادث"),
+        t("Hardware Procurement & Setup — Meta Quest fleet sourcing, configuration, and management", "شراء الأجهزة وإعدادها — توريد أسطول Meta Quest وضبطه وإدارته"),
+        t("Train-the-Trainer Program — upskill your HSE team to run and manage simulations independently", "برنامج تدريب المدربين — رفع كفاءة فريق HSE لتشغيل المحاكاة وإدارتها بشكل مستقل"),
+        t("LMS Integration — connect SIMULXR data to your existing enterprise training systems", "تكامل LMS — ربط بيانات SIMULXR بأنظمة التدريب المؤسسية الحالية"),
+        t("Ongoing Content Updates — as SOPs and procedures evolve, so does your simulation library", "تحديثات المحتوى المستمرة — مع تطور SOPs والإجراءات، تتطور مكتبة المحاكاة"),
+      ],
+      outcomes: [
+        t("Full training modernization without requiring internal XR expertise — we manage everything", "تحديث كامل للتدريب دون الحاجة إلى خبرة XR داخلية — نحن ندير كل شيء"),
+        t("One vendor, one contract, zero gaps — from audit to deployment to ongoing management", "مورد واحد، عقد واحد، بدون ثغرات — من التدقيق إلى النشر إلى الإدارة المستمرة"),
+        t("Measurable ROI dashboard from day one — training spend tied to competency outcomes", "لوحة ROI قابلة للقياس منذ اليوم الأول — ربط الإنفاق التدريبي بنتائج الكفاءة"),
       ],
     },
   ];
@@ -117,17 +217,17 @@ export default function Services() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0F2A4A]/80 to-[#0F2A4A]" />
         <div className="container relative z-10">
           <span className="section-eyebrow mb-4 block animate-fadeUp">
-            {t("OUR DIGITAL SERVICES", "خدماتنا الرقمية")}
+            {t("OUR SOLUTIONS", "حلولنا")}
           </span>
           <h1 className="font-display text-5xl sm:text-6xl md:text-7xl text-white leading-tight animate-fadeUp-delay-1">
-            {t("Real Industrial Simulation", "محاكاة صناعية حقيقية")}<span className="text-gold">.</span>
+            {t("Eight XR Solutions.", "ثماني حلول XR.")}<span className="text-gold"> </span>
             <br />
-            {t("Built for Your Facility", "لمنشأتك بالتحديد")}<span className="text-gold">.</span>
+            {t("Built for Your Facility.", "مبنية لمنشأتك.")}<span className="text-gold"> </span>
           </h1>
           <p className="text-white/50 max-w-2xl mt-6 text-lg leading-relaxed animate-fadeUp-delay-2">
             {t(
-              "Four integrated digital services built on your actual facility data — no generic templates. Your equipment, your procedures, your language.",
-              "أربع خدمات رقمية متكاملة مبنية على بيانات موقعك الفعلي — لا قوالب جاهزة، لا محتوى عام. محاكاة بمعداتك، بإجراءاتك، بلغتك."
+              "Eight integrated solutions built on your actual CAD/BIM data — emergency response, digital twin training, HSE competency, AR field support, and more. Your equipment, your procedures, your language.",
+              "ثماني حلول متكاملة مبنية على بيانات CAD/BIM الفعلية — الاستجابة للطوارئ والتوأم الرقمي وكفاءة HSE والدعم الميداني AR والمزيد. معداتك، إجراءاتك، لغتك."
             )}
           </p>
         </div>
@@ -244,13 +344,14 @@ export default function Services() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {[
-              { std: "EGPC", scope: t("All services — Egyptian market", "كل الخدمات — السوق المصري") },
-              { std: "API 14C", scope: t("Equipment + VCR", "محاكاة المعدات + VCR") },
-              { std: "OSHA 1910.119", scope: t("All services — HSE compliance", "جميع الخدمات — HSE") },
-              { std: "IOGP", scope: t("HSE Safety Scenarios", "محاكاة السلامة") },
-              { std: "OPITO", scope: t("HSE + Drill Simulation", "HSE + محاكاة الحفر") },
-              { std: "IWCF", scope: t("Drill Simulation — Level 3 & 4", "محاكاة الحفر — Level 3 & 4") },
-              { std: "IADC", scope: t("Drill Simulation", "محاكاة الحفر") },
+              { std: "API RP 505", scope: t("Emergency Response — fire & gas detection", "الاستجابة للطوارئ — كشف الحريق والغاز") },
+              { std: "NFPA 72", scope: t("Emergency Response — alarm systems", "الاستجابة للطوارئ — أنظمة الإنذار") },
+              { std: "ISA-84", scope: t("Emergency Response — safety instrumented systems", "الاستجابة للطوارئ — أنظمة السلامة الآلية") },
+              { std: "OSHA Aligned", scope: t("All solutions — HSE compliance", "جميع الحلول — امتثال HSE") },
+              { std: "EGPC", scope: t("All solutions — Egyptian market", "جميع الحلول — السوق المصري") },
+              { std: "API 14C", scope: t("Equipment + Digital Twin", "المعدات + التوأم الرقمي") },
+              { std: "IOGP", scope: t("HSE Competency Platform", "منصة كفاءة HSE") },
+              { std: "OPITO", scope: t("HSE + Equipment Operation", "HSE + تشغيل المعدات") },
             ].map((item, i) => (
               <div key={i} className="bg-gray-50 border border-gray-100 rounded-lg p-4 text-center">
                 <div className="font-display text-lg text-[#0F2A4A] mb-1">{item.std}</div>
