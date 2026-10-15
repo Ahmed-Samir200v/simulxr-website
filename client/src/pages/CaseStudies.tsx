@@ -70,7 +70,7 @@ export default function CaseStudies() {
                 <div className="grid grid-cols-3 gap-6 border-t border-gray-100 pt-8">
                   {cs.metrics.map((m, j) => (
                     <div key={j}>
-                      <div className="font-display text-3xl md:text-4xl text-[#D4622B] mb-1">{m.value}</div>
+                      <div className="font-display text-3xl md:text-4xl text-[#02C4FC] mb-1">{m.value}</div>
                       <p className="text-gray-500 text-sm">{m.label}</p>
                     </div>
                   ))}
@@ -85,7 +85,7 @@ export default function CaseStudies() {
       <section className="py-24 bg-[#0F2A4A]">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="text-[#D4622B] text-5xl font-display mb-6">"</div>
+            <div className="text-[#02C4FC] text-5xl font-display mb-6">"</div>
             <p className="font-display text-xl md:text-2xl text-white italic leading-relaxed mb-8">
               {t(
                 "SimulXR reduced our incident rate by 40% in the first year. The facility-specific training is exactly what we needed — not generic scenarios, but our actual plant.",
@@ -101,7 +101,7 @@ export default function CaseStudies() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-[#D4622B]">
+      <section className="py-24 bg-[#0A1E36] border-y border-[#02C4FC]/30">
         <div className="container text-center">
           <h2 className="font-display text-4xl sm:text-5xl text-white mb-6">
             {t("Your Facility Could Be Next", "منشأتك قد تكون التالية")}
@@ -112,7 +112,7 @@ export default function CaseStudies() {
               "ابدأ بتجربة 90 يوماً وشاهد النتائج بنفسك."
             )}
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#D4622B] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
+          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#02C4FC] text-[#0A1E36] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
             {t("Request Pilot Package", "اطلب باقة الـ Pilot")}
             <ArrowRight className="w-4 h-4" />
           </Link>

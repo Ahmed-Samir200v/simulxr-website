@@ -139,7 +139,7 @@ export default function About() {
                     "\"لا يمكنك تدريب الشجاعة بالقراءة عنها.\""
                   )}
                 </blockquote>
-                <p className="text-[#D4622B] text-xs mt-2 font-medium">— SIMUL XR</p>
+                <p className="text-[#02C4FC] text-xs mt-2 font-medium">— SIMUL XR</p>
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function About() {
                 onClick={() => setActiveValue(i)}
                 className={`px-5 py-3 rounded-full text-sm font-medium transition-all ${
                   activeValue === i
-                    ? "bg-[#D4622B] text-white shadow-lg"
+                    ? "bg-[#02C4FC] text-[#0A1E36] shadow-lg"
                     : "bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-700"
                 }`}
               >
@@ -214,12 +214,12 @@ export default function About() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               <div className="p-10 md:p-16 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-6">
-                  <activeVal.icon className="w-8 h-8 text-[#D4622B]" />
+                  <activeVal.icon className="w-8 h-8 text-[#02C4FC]" />
                   <span className="text-[#00B4D8] text-sm font-mono">0{activeValue + 1}</span>
                 </div>
                 <h3 className="font-display text-3xl md:text-4xl text-white mb-6 flex items-center gap-3">
                   {activeVal.title}
-                  <ChevronRight className="w-6 h-6 text-[#D4622B]" />
+                  <ChevronRight className="w-6 h-6 text-[#02C4FC]" />
                 </h3>
                 <p className="text-white/60 text-lg leading-relaxed">
                   {activeVal.desc}
@@ -310,8 +310,8 @@ export default function About() {
               },
             ].map((member, i) => (
               <div key={i} className="card-light rounded-lg p-8 text-center">
-                <div className="w-16 h-16 rounded-full bg-[#D4622B]/10 border border-[#D4622B]/20 flex items-center justify-center mx-auto mb-6">
-                  <span className="font-display text-xl text-[#D4622B]">0{i + 1}</span>
+                <div className="w-16 h-16 rounded-full bg-[#02C4FC]/10 border border-[#02C4FC]/20 flex items-center justify-center mx-auto mb-6">
+                  <span className="font-display text-xl text-[#02C4FC]">0{i + 1}</span>
                 </div>
                 <h4 className="font-display text-lg text-[#0F2A4A] mb-3">{member.role}</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">{member.desc}</p>
@@ -368,7 +368,7 @@ export default function About() {
               { city: t("Riyadh — KSA", "الرياض — السعودية"), address: t("Riyadh, Kingdom of Saudi Arabia", "الرياض، المملكة العربية السعودية") },
             ].map((office, i) => (
               <div key={i} className="card-light rounded-lg p-6 text-center">
-                <MapPin className="w-6 h-6 text-[#D4622B] mx-auto mb-3" />
+                <MapPin className="w-6 h-6 text-[#02C4FC] mx-auto mb-3" />
                 <h4 className="font-display text-lg text-[#0F2A4A] mb-2">{office.city}</h4>
                 <p className="text-gray-400 text-sm">{office.address}</p>
               </div>
@@ -378,7 +378,7 @@ export default function About() {
       </section>
 
       {/* ═══════════════════ CTA ═══════════════════ */}
-      <section className="py-24 md:py-32 bg-[#D4622B]">
+      <section className="py-24 md:py-32 bg-[#0A1E36] border-y border-[#02C4FC]/30">
         <div className="container text-center">
           <h2 className="font-display text-4xl sm:text-5xl text-white mb-6">
             {t("Ready to Transform Your Training?", "مستعد لتحويل تدريبك؟")}
@@ -389,7 +389,7 @@ export default function About() {
               "لنناقش كيف يمكن لـ SIMUL XR بناء المحاكاة المناسبة لمنشأتك — بالعربية، من بياناتك الفعلية."
             )}
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#D4622B] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
+          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#02C4FC] text-[#0A1E36] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
             {t("Get in Touch", "تواصل معنا")}
             <ArrowRight className="w-4 h-4" />
           </Link>

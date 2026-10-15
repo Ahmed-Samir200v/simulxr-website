@@ -44,11 +44,11 @@ export default function Insights() {
                   <span className="text-[#00B4D8] text-xs font-medium tracking-wider uppercase">{article.tag}</span>
                   <span className="text-gray-400 text-xs">{article.date}</span>
                 </div>
-                <h3 className="font-display text-xl text-[#0F2A4A] mb-4 group-hover:text-[#D4622B] transition-colors flex-1">
+                <h3 className="font-display text-xl text-[#0F2A4A] mb-4 group-hover:text-[#02C4FC] transition-colors flex-1">
                   {article.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">{article.desc}</p>
-                <div className="flex items-center gap-2 text-[#D4622B] text-sm font-medium group-hover:translate-x-2 transition-transform duration-200">
+                <div className="flex items-center gap-2 text-[#02C4FC] text-sm font-medium group-hover:translate-x-2 transition-transform duration-200">
                   <span>{t("Read More", "اقرأ المزيد")}</span>
                   <ArrowRight className="w-4 h-4" />
                 </div>
@@ -59,7 +59,7 @@ export default function Insights() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-24 bg-[#D4622B]">
+      <section className="py-24 bg-[#0A1E36] border-y border-[#02C4FC]/30">
         <div className="container text-center">
           <h2 className="font-display text-4xl sm:text-5xl text-white mb-6">
             {t("Stay Informed", "ابقَ على اطلاع")}
@@ -70,7 +70,7 @@ export default function Insights() {
               "رؤى شهرية حول السلامة الصناعية وتكنولوجيا XR وتطورات سوق المنطقة."
             )}
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#D4622B] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
+          <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#02C4FC] text-[#0A1E36] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
             {t("Subscribe to Insights", "اشترك في المقالات")}
             <ArrowRight className="w-4 h-4" />
           </Link>

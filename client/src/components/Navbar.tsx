@@ -57,7 +57,7 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-3 py-1 text-sm font-medium transition-colors duration-200 ${
                   location === link.href
-                    ? "text-[#D4622B]"
+                    ? "text-[#02C4FC]"
                     : "text-white/70 hover:text-white"
                 }`}
               >
@@ -74,7 +74,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <button
             onClick={() => setLang(lang === "en" ? "ar" : "en")}
-            className="text-xs text-white/60 hover:text-white border border-white/20 hover:border-[#D4622B]/40 px-3 py-1.5 rounded-full transition-all font-medium tracking-wide"
+            className="text-xs text-white/60 hover:text-white border border-white/20 hover:border-[#02C4FC]/40 px-3 py-1.5 rounded-full transition-all font-medium tracking-wide"
           >
             {lang === "en" ? "عربي" : "EN"}
           </button>
@@ -114,8 +114,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-4 py-3 text-lg font-medium transition-colors ${
                   location === link.href
-                    ? "text-[#D4622B]"
-                    : "text-white/80 hover:text-[#D4622B]"
+                    ? "text-[#02C4FC]"
+                    : "text-white/80 hover:text-[#02C4FC]"
                 }`}
               >
                 {link.label}

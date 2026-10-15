@@ -84,7 +84,7 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         placeholder={t("Ahmed Al-Mansouri", "أحمد المنصوري")}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] placeholder:text-gray-400 rounded-lg focus:border-[#D4622B] focus:ring-1 focus:ring-[#D4622B]/30 focus:outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] placeholder:text-gray-400 rounded-lg focus:border-[#02C4FC] focus:ring-1 focus:ring-[#02C4FC]/30 focus:outline-none transition-all text-sm"
                       />
                     </div>
                     <div>
@@ -96,7 +96,7 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         placeholder={t("Cairo Petroleum", "القاهرة للبترول")}
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] placeholder:text-gray-400 rounded-lg focus:border-[#D4622B] focus:ring-1 focus:ring-[#D4622B]/30 focus:outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] placeholder:text-gray-400 rounded-lg focus:border-[#02C4FC] focus:ring-1 focus:ring-[#02C4FC]/30 focus:outline-none transition-all text-sm"
                       />
                     </div>
                   </div>
@@ -111,7 +111,7 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         placeholder="ahmed@company.com"
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] placeholder:text-gray-400 rounded-lg focus:border-[#D4622B] focus:ring-1 focus:ring-[#D4622B]/30 focus:outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] placeholder:text-gray-400 rounded-lg focus:border-[#02C4FC] focus:ring-1 focus:ring-[#02C4FC]/30 focus:outline-none transition-all text-sm"
                       />
                     </div>
                     <div>
@@ -121,7 +121,7 @@ export default function Contact() {
                         value={formData.role}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] rounded-lg focus:border-[#D4622B] focus:ring-1 focus:ring-[#D4622B]/30 focus:outline-none transition-all text-sm"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] rounded-lg focus:border-[#02C4FC] focus:ring-1 focus:ring-[#02C4FC]/30 focus:outline-none transition-all text-sm"
                       >
                         <option value="">{t("Select Role", "اختر الدور")}</option>
                         <option value="HSE Manager">{t("HSE Manager", "مدير HSE")}</option>
@@ -147,7 +147,7 @@ export default function Contact() {
                         "Tell us about your facility, workforce size, and training challenges...",
                         "أخبرنا عن منشأتك وحجم القوى العاملة وتحديات التدريب..."
                       )}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] placeholder:text-gray-400 rounded-lg focus:border-[#D4622B] focus:ring-1 focus:ring-[#D4622B]/30 focus:outline-none transition-all text-sm resize-none"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 text-[#0F2A4A] placeholder:text-gray-400 rounded-lg focus:border-[#02C4FC] focus:ring-1 focus:ring-[#02C4FC]/30 focus:outline-none transition-all text-sm resize-none"
                     />
                   </div>
 
@@ -178,13 +178,13 @@ export default function Contact() {
                     { city: t("Riyadh, KSA", "الرياض، السعودية"), address: t("Business Development", "تطوير الأعمال"), tag: "BD" },
                   ].map((office, i) => (
                     <div key={i} className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-full bg-[#D4622B]/10 border border-[#D4622B]/20 flex items-center justify-center shrink-0">
-                        <MapPin className="w-5 h-5 text-[#D4622B]" />
+                      <div className="w-10 h-10 rounded-full bg-[#02C4FC]/10 border border-[#02C4FC]/20 flex items-center justify-center shrink-0">
+                        <MapPin className="w-5 h-5 text-[#02C4FC]" />
                       </div>
                       <div>
                         <p className="text-[#0F2A4A] font-medium text-sm">{office.city}</p>
                         <p className="text-gray-500 text-sm">{office.address}</p>
-                        <span className="text-[#D4622B] text-xs font-medium mt-1 inline-block">{office.tag}</span>
+                        <span className="text-[#02C4FC] text-xs font-medium mt-1 inline-block">{office.tag}</span>
                       </div>
                     </div>
                   ))}
@@ -197,8 +197,8 @@ export default function Contact() {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-[#D4622B]/10 border border-[#D4622B]/20 flex items-center justify-center shrink-0">
-                      <Mail className="w-5 h-5 text-[#D4622B]" />
+                    <div className="w-10 h-10 rounded-full bg-[#02C4FC]/10 border border-[#02C4FC]/20 flex items-center justify-center shrink-0">
+                      <Mail className="w-5 h-5 text-[#02C4FC]" />
                     </div>
                     <div>
                       <p className="text-gray-500 text-xs mb-0.5">{t("Email", "البريد")}</p>
@@ -206,8 +206,8 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-[#D4622B]/10 border border-[#D4622B]/20 flex items-center justify-center shrink-0">
-                      <Phone className="w-5 h-5 text-[#D4622B]" />
+                    <div className="w-10 h-10 rounded-full bg-[#02C4FC]/10 border border-[#02C4FC]/20 flex items-center justify-center shrink-0">
+                      <Phone className="w-5 h-5 text-[#02C4FC]" />
                     </div>
                     <div>
                       <p className="text-gray-500 text-xs mb-0.5">{t("Phone", "الهاتف")}</p>
@@ -222,12 +222,12 @@ export default function Contact() {
                   {t("What's in the Pilot?", "ماذا يتضمن الـ Pilot؟")}
                 </h3>
                 <ul className="text-white/50 text-sm space-y-2 leading-relaxed">
-                  <li className="flex items-start gap-2"><span className="text-[#D4622B]">•</span> {t("1 custom simulation from your CAD files", "محاكاة مخصصة واحدة من ملفات CAD الخاصة بك")}</li>
-                  <li className="flex items-start gap-2"><span className="text-[#D4622B]">•</span> {t("Up to 50 trainees", "حتى 50 متدرباً")}</li>
-                  <li className="flex items-start gap-2"><span className="text-[#D4622B]">•</span> {t("Meta Quest headsets provided", "سماعات Meta Quest مقدمة")}</li>
-                  <li className="flex items-start gap-2"><span className="text-[#D4622B]">•</span> {t("90-day deployment period", "فترة نشر 90 يوماً")}</li>
-                  <li className="flex items-start gap-2"><span className="text-[#D4622B]">•</span> {t("Full performance analytics dashboard", "لوحة تحليلات أداء كاملة")}</li>
-                  <li className="flex items-start gap-2"><span className="text-[#D4622B]">•</span> {t("HSE compliance reporting", "تقارير امتثال HSE")}</li>
+                  <li className="flex items-start gap-2"><span className="text-[#02C4FC]">•</span> {t("1 custom simulation from your CAD files", "محاكاة مخصصة واحدة من ملفات CAD الخاصة بك")}</li>
+                  <li className="flex items-start gap-2"><span className="text-[#02C4FC]">•</span> {t("Up to 50 trainees", "حتى 50 متدرباً")}</li>
+                  <li className="flex items-start gap-2"><span className="text-[#02C4FC]">•</span> {t("Meta Quest headsets provided", "سماعات Meta Quest مقدمة")}</li>
+                  <li className="flex items-start gap-2"><span className="text-[#02C4FC]">•</span> {t("90-day deployment period", "فترة نشر 90 يوماً")}</li>
+                  <li className="flex items-start gap-2"><span className="text-[#02C4FC]">•</span> {t("Full performance analytics dashboard", "لوحة تحليلات أداء كاملة")}</li>
+                  <li className="flex items-start gap-2"><span className="text-[#02C4FC]">•</span> {t("HSE compliance reporting", "تقارير امتثال HSE")}</li>
                 </ul>
               </div>
             </div>

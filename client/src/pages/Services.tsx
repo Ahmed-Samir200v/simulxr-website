@@ -507,7 +507,7 @@ export default function Services() {
                 onClick={() => { setActiveService(i); setOpenFaq(null); }}
                 className={`px-5 py-3 rounded-full text-sm font-medium transition-all ${
                   activeService === i
-                    ? "bg-[#D4622B] text-white"
+                    ? "bg-[#02C4FC] text-[#0A1E36]"
                     : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white border border-white/10"
                 }`}
               >
@@ -520,7 +520,7 @@ export default function Services() {
           {/* Service Hero Headline */}
           <div className="mb-10">
             <div className="flex items-center gap-3 mb-4">
-              <active.icon className="w-6 h-6 text-[#D4622B]" />
+              <active.icon className="w-6 h-6 text-[#02C4FC]" />
               <span className="text-[#00B4D8] text-sm font-mono">{active.id}</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-white leading-tight mb-5">
@@ -554,7 +554,7 @@ export default function Services() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
               {active.solution.map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#D4622B] mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-[#02C4FC] mt-0.5 shrink-0" />
                   <span className="text-white/70 text-base leading-relaxed">{item}</span>
                 </div>
               ))}
@@ -570,9 +570,9 @@ export default function Services() {
               {active.features.map((feature, i) => {
                 const Icon = feature.icon;
                 return (
-                  <div key={i} className="bg-white/[0.04] border border-white/10 rounded-xl p-6 hover:border-[#D4622B]/30 transition-colors">
-                    <div className="w-10 h-10 rounded-lg bg-[#D4622B]/10 border border-[#D4622B]/20 flex items-center justify-center mb-4">
-                      <Icon className="w-5 h-5 text-[#D4622B]" />
+                  <div key={i} className="bg-white/[0.04] border border-white/10 rounded-xl p-6 hover:border-[#02C4FC]/30 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-[#02C4FC]/10 border border-[#02C4FC]/20 flex items-center justify-center mb-4">
+                      <Icon className="w-5 h-5 text-[#02C4FC]" />
                     </div>
                     <h4 className="text-white font-semibold mb-2 text-sm">{feature.title}</h4>
                     <p className="text-white/40 text-sm leading-relaxed">{feature.desc}</p>
@@ -618,7 +618,7 @@ export default function Services() {
                   >
                     <span className="text-white font-medium text-sm pr-6 leading-relaxed">{item.q}</span>
                     <ChevronDown
-                      className={`w-4 h-4 shrink-0 transition-transform duration-200 ${openFaq === i ? "rotate-180 text-[#D4622B]" : "text-white/30"}`}
+                      className={`w-4 h-4 shrink-0 transition-transform duration-200 ${openFaq === i ? "rotate-180 text-[#02C4FC]" : "text-white/30"}`}
                     />
                   </button>
                   {openFaq === i && (
@@ -637,7 +637,7 @@ export default function Services() {
               {t("Request a Pilot", "اطلب تجربة تجريبية")}
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/contact" className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/20 text-white text-sm font-medium hover:border-[#D4622B]/50 hover:text-[#D4622B] transition-all">
+            <Link href="/contact" className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/20 text-white text-sm font-medium hover:border-[#02C4FC]/50 hover:text-[#02C4FC] transition-all">
               {t("Download Safety Training ROI Guide", "حمّل دليل عائد الاستثمار في تدريب السلامة")}
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -655,7 +655,7 @@ export default function Services() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="card-light rounded-lg p-8 text-center">
-              <Package className="w-10 h-10 text-[#D4622B] mx-auto mb-4" />
+              <Package className="w-10 h-10 text-[#02C4FC] mx-auto mb-4" />
               <h3 className="font-display text-xl text-[#0F2A4A] mb-4">{t("Standard", "قياسي")}</h3>
               <ul className="text-gray-600 text-sm space-y-2 text-left">
                 <li>• {t("Ready-to-deploy simulations", "محاكاة جاهزة للنشر الفوري")}</li>
@@ -665,8 +665,8 @@ export default function Services() {
                 <li>• {t("No files needed from you", "لا يحتاج ملفات منك")}</li>
               </ul>
             </div>
-            <div className="card-light rounded-lg p-8 text-center border-2 border-[#D4622B]/30">
-              <Building2 className="w-10 h-10 text-[#D4622B] mx-auto mb-4" />
+            <div className="card-light rounded-lg p-8 text-center border-2 border-[#02C4FC]/30">
+              <Building2 className="w-10 h-10 text-[#02C4FC] mx-auto mb-4" />
               <h3 className="font-display text-xl text-[#0F2A4A] mb-4">{t("Facility-Specific", "مخصص")}</h3>
               <ul className="text-gray-600 text-sm space-y-2 text-left">
                 <li>• {t("Built from your CAD/BIM/Navisworks files", "مبني من ملفات CAD/BIM/Navisworks الخاصة بك")}</li>
@@ -712,7 +712,7 @@ export default function Services() {
       </section>
 
       {/* ═══════════════════ CTA ═══════════════════ */}
-      <section className="py-24 md:py-32 bg-[#D4622B]">
+      <section className="py-24 md:py-32 bg-[#0A1E36] border-y border-[#02C4FC]/30">
         <div className="container text-center">
           <h2 className="font-display text-4xl sm:text-5xl text-white mb-6">
             {t("Not Sure Where to Start?", "لست متأكداً من أين تبدأ؟")}
@@ -724,7 +724,7 @@ export default function Services() {
             )}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#D4622B] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
+            <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#02C4FC] text-[#0A1E36] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
               {t("Request Free Consultation", "اطلب استشارة مجانية")}
               <ArrowRight className="w-4 h-4" />
             </Link>

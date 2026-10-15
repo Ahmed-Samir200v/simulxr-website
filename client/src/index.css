@@ -14,9 +14,9 @@
   --color-navy-mid:     #0D2040;
   --color-navy-light:   #1A3A5C;
   --color-navy-surface: #0A1E36;
-  --color-orange:       #D4622B;
-  --color-orange-light: #E07540;
-  --color-orange-dark:  #B85325;
+  --color-brand-accent:       #02C4FC;
+  --color-brand-accent-light: #4DD8FF;
+  --color-brand-accent-dark:  #009AC8;
   --color-cyan:         #00B4D8;
   --color-cyan-light:   #22C4E8;
   --color-cyan-dark:    #0090B0;
@@ -65,15 +65,15 @@
 }
 
 :root {
-  --primary: #D4622B;
-  --primary-foreground: #FFFFFF;
-  --sidebar-primary: #D4622B;
-  --sidebar-primary-foreground: #FFFFFF;
-  --chart-1: #D4622B;
+  --primary: #02C4FC;
+  --primary-foreground: #0A1E36;
+  --sidebar-primary: #02C4FC;
+  --sidebar-primary-foreground: #0A1E36;
+  --chart-1: #02C4FC;
   --chart-2: #00B4D8;
   --chart-3: #1A3A5C;
   --chart-4: #22C4E8;
-  --chart-5: #E07540;
+  --chart-5: #4DD8FF;
   --radius: 0.5rem;
   --background: #0F2A4A;
   --foreground: #F5F6F8;
@@ -85,26 +85,26 @@
   --secondary-foreground: #9CA3AF;
   --muted: #1A3A5C;
   --muted-foreground: #6B7280;
-  --accent: #D4622B;
-  --accent-foreground: #FFFFFF;
+  --accent: #02C4FC;
+  --accent-foreground: #0A1E36;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #FFFFFF;
   --border: rgba(255, 255, 255, 0.08);
   --input: #1A3A5C;
-  --ring: #D4622B;
+  --ring: #02C4FC;
   --sidebar: #0A1E36;
   --sidebar-foreground: #F5F6F8;
   --sidebar-accent: #1A3A5C;
   --sidebar-accent-foreground: #F5F6F8;
   --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #D4622B;
+  --sidebar-ring: #02C4FC;
 }
 
 .dark {
-  --primary: #D4622B;
-  --primary-foreground: #FFFFFF;
-  --sidebar-primary: #D4622B;
-  --sidebar-primary-foreground: #FFFFFF;
+  --primary: #02C4FC;
+  --primary-foreground: #0A1E36;
+  --sidebar-primary: #02C4FC;
+  --sidebar-primary-foreground: #0A1E36;
   --background: #0F2A4A;
   --foreground: #F5F6F8;
   --card: #1A3A5C;
@@ -115,24 +115,24 @@
   --secondary-foreground: #9CA3AF;
   --muted: #1A3A5C;
   --muted-foreground: #6B7280;
-  --accent: #D4622B;
-  --accent-foreground: #FFFFFF;
+  --accent: #02C4FC;
+  --accent-foreground: #0A1E36;
   --destructive: oklch(0.65 0.22 25);
   --destructive-foreground: #FFFFFF;
   --border: rgba(255, 255, 255, 0.08);
   --input: #1A3A5C;
-  --ring: #D4622B;
-  --chart-1: #D4622B;
+  --ring: #02C4FC;
+  --chart-1: #02C4FC;
   --chart-2: #00B4D8;
   --chart-3: #1A3A5C;
   --chart-4: #22C4E8;
-  --chart-5: #E07540;
+  --chart-5: #4DD8FF;
   --sidebar: #0A1E36;
   --sidebar-foreground: #F5F6F8;
   --sidebar-accent: #1A3A5C;
   --sidebar-accent-foreground: #F5F6F8;
   --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #D4622B;
+  --sidebar-ring: #02C4FC;
 }
 
 @layer base {
@@ -218,17 +218,17 @@
   font-family: "Inter", sans-serif;
 }
 
-/* Orange accent (primary CTA) */
+/* Legacy utility names retained for component compatibility; values use the official brand accent. */
 .text-gold {
-  color: #D4622B;
+  color: #02C4FC;
 }
 
 .bg-gold {
-  background-color: #D4622B;
+  background-color: #02C4FC;
 }
 
 .border-gold {
-  border-color: #D4622B;
+  border-color: #02C4FC;
 }
 
 /* Cyan accent (tech/XR accent) */
@@ -298,15 +298,15 @@
   font-family: "Inter", system-ui, sans-serif;
   font-weight: 600;
   font-size: 0.9375rem;
-  background-color: #D4622B;
-  color: #FFFFFF;
+  background-color: #02C4FC;
+  color: #0A1E36;
   transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .btn-gold:hover {
-  background-color: #E07540;
+  background-color: #4DD8FF;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(212, 98, 43, 0.35);
+  box-shadow: 0 8px 24px rgba(2, 196, 252, 0.28);
 }
 
 .btn-gold:active {
@@ -330,8 +330,8 @@
 }
 
 .btn-outline-dark:hover {
-  border-color: #D4622B;
-  color: #D4622B;
+  border-color: #02C4FC;
+  color: #02C4FC;
   transform: translateY(-2px);
 }
 
@@ -347,7 +347,7 @@
 }
 
 .card-dark:hover {
-  border-color: rgba(212, 98, 43, 0.35);
+  border-color: rgba(2, 196, 252, 0.35);
   transform: translateY(-6px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
@@ -360,7 +360,7 @@
 }
 
 .card-light:hover {
-  border-color: rgba(212, 98, 43, 0.3);
+  border-color: rgba(2, 196, 252, 0.3);
   transform: translateY(-6px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
 }
@@ -435,7 +435,7 @@
 /* Heading dot accent */
 .heading-dot::after {
   content: ".";
-  color: #D4622B;
+  color: #02C4FC;
 }
 
 /* Smooth scroll */
@@ -445,8 +445,8 @@ html {
 
 /* Stats boxes */
 .stats-orange {
-  background: #D4622B;
-  color: #FFFFFF;
+  background: #02C4FC;
+  color: #0A1E36;
 }
 
 .stats-dark {

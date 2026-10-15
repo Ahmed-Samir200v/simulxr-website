@@ -10,10 +10,10 @@ export const colors = {
   navyLight:   '#1A3A5C',
   navySurface: '#0A1E36',
 
-  // Action / CTA
-  orange:      '#D4622B',
-  orangeLight: '#E07540',
-  orangeDark:  '#B85325',
+  // Action / CTA — AFAQO ecosystem accent
+  brandAccent:      '#02C4FC',
+  brandAccentLight: '#4DD8FF',
+  brandAccentDark:  '#009AC8',
 
   // Technology accent
   cyan:        '#00B4D8',
@@ -63,7 +63,7 @@ export const radius = {
 export const shadows = {
   card:    '0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06)',
   cardHover:'0 8px 32px rgba(0,0,0,0.12)',
-  orange:  '0 8px 24px rgba(212,98,43,0.25)',
+  brandAccent: '0 8px 24px rgba(2,196,252,0.25)',
   cyan:    '0 4px 20px rgba(0,180,216,0.20)',
 } as const;
 

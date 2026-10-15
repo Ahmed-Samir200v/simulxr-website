@@ -145,10 +145,10 @@ function CompareSection() {
       className="relative overflow-hidden bg-[#0F2A4A] py-24 md:py-32"
     >
       <ComparisonSchema />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(0,180,216,0.20),transparent_32%),radial-gradient(circle_at_86%_22%,rgba(212,98,43,0.18),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.045),rgba(255,255,255,0)_42%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(0,180,216,0.20),transparent_32%),radial-gradient(circle_at_86%_22%,rgba(2,196,252,0.16),transparent_28%),linear-gradient(135deg,rgba(255,255,255,0.045),rgba(255,255,255,0)_42%)]" />
       <div className="absolute inset-0 opacity-[0.13] [background-image:linear-gradient(rgba(255,255,255,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.10)_1px,transparent_1px)] [background-size:32px_32px]" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#00B4D8]/60 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#D4622B]/45 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#02C4FC]/45 to-transparent" />
 
       <div className="container relative z-10">
         <motion.div
@@ -290,7 +290,7 @@ export default function Home() {
                 {t("Request a Free Demo", "اطلب عرضاً تجريبياً")}
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link href="/services" className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/20 text-white text-sm font-medium hover:border-[#D4622B]/50 hover:text-[#D4622B] transition-all">
+              <Link href="/services" className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/20 text-white text-sm font-medium hover:border-[#02C4FC]/50 hover:text-[#02C4FC] transition-all">
                 {t("Explore Our Services", "استكشف خدماتنا")}
                 <ArrowRight className="w-4 h-4" />
               </Link>
@@ -313,7 +313,7 @@ export default function Home() {
                 <div className="mx-auto mb-2 flex h-8 w-8 items-center justify-center rounded-md border border-[#00B4D8]/25 bg-[#00B4D8]/10 text-[#00B4D8]">
                   <stat.icon aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
                 </div>
-                <div className="font-display mb-1 text-2xl text-[#D4622B] md:text-3xl">{stat.value}</div>
+                <div className="font-display mb-1 text-2xl text-[#02C4FC] md:text-3xl">{stat.value}</div>
                 <p className="text-xs leading-tight text-white/55">{stat.label}</p>
               </div>
             ))}
@@ -363,8 +363,8 @@ export default function Home() {
               const Icon = pillar.icon;
               return (
                 <div key={i} className="card-light rounded-lg p-10 text-center">
-                  <div className="w-16 h-16 rounded-full bg-[#D4622B]/10 border border-[#D4622B]/20 flex items-center justify-center mx-auto mb-6">
-                    <Icon className="w-8 h-8 text-[#D4622B]" />
+                  <div className="w-16 h-16 rounded-full bg-[#02C4FC]/10 border border-[#02C4FC]/20 flex items-center justify-center mx-auto mb-6">
+                    <Icon className="w-8 h-8 text-[#02C4FC]" />
                   </div>
                   <h3 className="font-display text-2xl text-[#0F2A4A] mb-4">{pillar.title}</h3>
                   <p className="text-gray-500 leading-relaxed">{pillar.desc}</p>
@@ -415,8 +415,8 @@ export default function Home() {
                   <img src={service.img} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                 </div>
                 <div className="p-6 md:p-8 flex flex-col justify-center md:w-3/5">
-                  <span className="text-[#D4622B]/60 text-sm font-mono mb-2">{service.num}</span>
-                  <h3 className="font-display text-xl md:text-2xl text-white group-hover:text-[#D4622B] transition-colors mb-3">
+                  <span className="text-[#02C4FC]/60 text-sm font-mono mb-2">{service.num}</span>
+                  <h3 className="font-display text-xl md:text-2xl text-white group-hover:text-[#02C4FC] transition-colors mb-3">
                     {service.title}
                   </h3>
                   <p className="text-white/40 text-sm leading-relaxed">{service.desc}</p>
@@ -443,7 +443,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            <div className="absolute top-14 left-[12%] right-[12%] h-px bg-gradient-to-r from-[#D4622B]/30 via-white/10 to-[#D4622B]/30 hidden md:block" />
+            <div className="absolute top-14 left-[12%] right-[12%] h-px bg-gradient-to-r from-[#02C4FC]/30 via-white/10 to-[#02C4FC]/30 hidden md:block" />
 
             {[
               { num: "01", title: t("Ingest", "الاستقبال"), desc: t("We receive your CAD/BIM/Navisworks files and SOP documents. Your real facility — no templates.", "نستقبل ملفات CAD/BIM/Navisworks ووثائق SOP. منشأتك الحقيقية — لا قوالب جاهزة.") },
@@ -452,10 +452,10 @@ export default function Home() {
               { num: "04", title: t("Deploy & Measure", "النشر والقياس"), desc: t("Instant training on Meta Quest — on-site or remote. Real-time dashboards and HSE reports.", "تدريب فوري على Meta Quest — في الموقع أو عن بُعد. لوحات أداء فورية وتقارير HSE.") },
             ].map((step, i) => (
               <div key={i} className="text-center relative z-10 group">
-                <div className="w-[4.5rem] h-[4.5rem] rounded-full border-2 border-[#D4622B]/30 bg-[#0F2A4A] flex items-center justify-center mx-auto mb-6 group-hover:border-[#D4622B] group-hover:bg-[#D4622B]/10 transition-all duration-300">
-                  <span className="font-display text-xl text-[#D4622B]">{step.num}</span>
+                <div className="w-[4.5rem] h-[4.5rem] rounded-full border-2 border-[#02C4FC]/30 bg-[#0F2A4A] flex items-center justify-center mx-auto mb-6 group-hover:border-[#02C4FC] group-hover:bg-[#02C4FC]/10 transition-all duration-300">
+                  <span className="font-display text-xl text-[#02C4FC]">{step.num}</span>
                 </div>
-                <h3 className="font-display text-xl text-white mb-3 group-hover:text-[#D4622B] transition-colors">
+                <h3 className="font-display text-xl text-white mb-3 group-hover:text-[#02C4FC] transition-colors">
                   {step.title}
                 </h3>
                 <p className="text-white/40 text-sm leading-relaxed">{step.desc}</p>
@@ -478,8 +478,8 @@ export default function Home() {
               { ref: stat4.ref, count: stat4.count, suffix: "%", label: t("Reduction in emergency response time after VR training", "انخفاض وقت الاستجابة للطوارئ بعد التدريب الافتراضي") },
             ].map((stat, i) => (
               <div key={i} ref={stat.ref} className="text-center p-8">
-                <div className="font-display text-4xl md:text-5xl mb-3 text-[#D4622B]">
-                  {stat.prefix || ""}{stat.count}{stat.suffix}
+                <div className="font-display text-4xl md:text-5xl mb-3 text-[#02C4FC]">
+                  {stat.count}{stat.suffix}
                 </div>
                 <p className="text-white/40 text-sm leading-snug">{stat.label}</p>
               </div>
@@ -525,7 +525,7 @@ export default function Home() {
               },
             ].map((testimonial, i) => (
               <div key={i} className="card-light rounded-lg p-8">
-                <Quote className="w-8 h-8 text-[#D4622B]/30 mb-4" />
+                <Quote className="w-8 h-8 text-[#02C4FC]/30 mb-4" />
                 <p className="text-gray-700 leading-relaxed mb-6 italic">
                   "{testimonial.quote}"
                 </p>
@@ -537,7 +537,7 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════ CTA SECTION ═══════════════════ */}
-      <section className="py-24 md:py-32 bg-[#D4622B] relative overflow-hidden">
+      <section className="py-24 md:py-32 bg-[#0A1E36] border-y border-[#02C4FC]/30 relative overflow-hidden">
         <div className="container relative z-10 text-center">
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white mb-6">
             {t("Ready to Train for the Unthinkable?", "هل أنتم مستعدون للتدريب على ما لا يُتصوَّر؟")}
@@ -549,7 +549,7 @@ export default function Home() {
             )}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[#D4622B] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
+            <Link href="/contact" className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#02C4FC] text-[#0A1E36] font-semibold hover:bg-[#F5F6F8] transition-all hover:-translate-y-0.5">
               {t("Request Pilot Package", "اطلب باقة الـ Pilot")}
               <ArrowRight className="w-4 h-4" />
             </Link>
